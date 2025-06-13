@@ -1,5 +1,21 @@
 [
     {
+        "id": 3574,
+        "slug": "maximize-subarray-gcd-score",
+        "url": "https://leetcode.com/problems/maximize-subarray-gcd-score/",
+        "titulo": "Maximize Subarray GCD Score",
+        "enunciado": "You are given an array of positive integers \nnums\n and an integer \nk\n.\n\n\nYou may perform at most \nk\n operations. In each operation, you can choose one element in the array and \ndouble\n its value. Each element can be doubled \nat most\n once.\n\n\nThe \nscore\n of a contiguous \nsubarray\n is defined as the \nproduct\n of its length and the \ngreatest common divisor (GCD)\n of all its elements.\n\n\nYour task is to return the \nmaximum\n \nscore\n that can be achieved by selecting a contiguous subarray from the modified array.\n\n\nNote:\n\n\n\n\nThe \ngreatest common divisor (GCD)\n of an array is the largest integer that evenly divides all the array elements.\n\n\n\n\n \n\n\nExample 1:\n\n\n\n\nInput:\n \nnums = [2,4], k = 1\n\n\nOutput:\n \n8\n\n\nExplanation:\n\n\n\n\nDouble \nnums[0]\n to 4 using one operation. The modified array becomes \n[4, 4]\n.\n\n\nThe GCD of the subarray \n[4, 4]\n is 4, and the length is 2.\n\n\nThus, the maximum possible score is \n2 × 4 = 8\n.\n\n\n\n\n\n\nExample 2:\n\n\n\n\nInput:\n \nnums = [3,5,7], k = 2\n\n\nOutput:\n \n14\n\n\nExplanation:\n\n\n\n\nDouble \nnums[2]\n to 14 using one operation. The modified array becomes \n[3, 5, 14]\n.\n\n\nThe GCD of the subarray \n[14]\n is 14, and the length is 1.\n\n\nThus, the maximum possible score is \n1 × 14 = 14\n.\n\n\n\n\n\n\nExample 3:\n\n\n\n\nInput:\n \nnums = [5,5,5], k = 1\n\n\nOutput:\n \n15\n\n\nExplanation:\n\n\n\n\nThe subarray \n[5, 5, 5]\n has a GCD of 5, and its length is 3.\n\n\nSince doubling any element doesn't improve the score, the maximum score is \n3 × 5 = 15\n.\n\n\n\n\n\n\n \n\n\nConstraints:\n\n\n\n\n1 <= n == nums.length <= 1500\n\n\n1 <= nums[i] <= 10\n9\n\n\n1 <= k <= n",
+        "temas": [
+            "Array",
+            "Math",
+            "Enumeration",
+            "Number Theory"
+        ],
+        "dificuldade": "Difícil",
+        "tema_principal": "Array",
+        "has_image": false
+    },
+    {
         "id": 3569,
         "slug": "maximize-count-of-distinct-primes-after-split",
         "url": "https://leetcode.com/problems/maximize-count-of-distinct-primes-after-split/",
@@ -12,7 +28,26 @@
             "Number Theory"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
+    },
+    {
+        "id": 3575,
+        "slug": "maximum-good-subtree-score",
+        "url": "https://leetcode.com/problems/maximum-good-subtree-score/",
+        "titulo": "Maximum Good Subtree Score",
+        "enunciado": "You are given an undirected tree rooted at node 0 with \nn\n nodes numbered from 0 to \nn - 1\n. Each node \ni\n has an integer value \nvals[i]\n, and its parent is given by \npar[i]\n.\n\n\nA \nsubset\n of nodes within the \nsubtree\n of a node is called \ngood\n if every digit from 0 to 9 appears \nat most\n once in the decimal representation of the values of the selected nodes.\n\n\nThe \nscore\n of a good subset is the sum of the values of its nodes.\n\n\nDefine an array \nmaxScore\n of length \nn\n, where \nmaxScore[u]\n represents the \nmaximum\n possible sum of values of a good subset of nodes that belong to the subtree rooted at node \nu\n, including \nu\n itself and all its descendants.\n\n\nReturn the sum of all values in \nmaxScore\n.\n\n\nSince the answer may be large, return it \nmodulo\n \n10\n9\n + 7\n.\n\n\n \n\n\nExample 1:\n\n\n\n\nInput:\n \nvals = [2,3], par = [-1,0]\n\n\nOutput:\n \n8\n\n\nExplanation:\n\n\n\n\n\n\nThe subtree rooted at node 0 includes nodes \n{0, 1}\n. The subset \n{2, 3}\n is\n \ngood as the digits 2 and 3 appear only once. The score of this subset is \n2 + 3 = 5\n.\n\n\nThe subtree rooted at node 1 includes only node \n{1}\n. The subset \n{3}\n is\n \ngood. The score of this subset is 3.\n\n\nThe \nmaxScore\n array is \n[5, 3]\n, and the sum of all values in \nmaxScore\n is \n5 + 3 = 8\n. Thus, the answer is 8.\n\n\n\n\n\n\nExample 2:\n\n\n\n\nInput:\n \nvals = [1,5,2], par = [-1,0,0]\n\n\nOutput:\n \n15\n\n\nExplanation:\n\n\n\n\n\n\nThe subtree rooted at node 0 includes nodes \n{0, 1, 2}\n. The subset \n{1, 5, 2}\n is\n \ngood as the digits 1, 5 and 2 appear only once. The score of this subset is \n1 + 5 + 2 = 8\n.\n\n\nThe subtree rooted at node 1 includes only node \n{1}\n. The subset \n{5}\n is\n \ngood. The score of this subset is 5.\n\n\nThe subtree rooted at node 2 includes only node \n{2}\n. The subset \n{2}\n is\n \ngood. The score of this subset is 2.\n\n\nThe \nmaxScore\n array is \n[8, 5, 2]\n, and the sum of all values in \nmaxScore\n is \n8 + 5 + 2 = 15\n. Thus, the answer is 15.\n\n\n\n\n\n\nExample 3:\n\n\n\n\nInput:\n \nvals = [34,1,2], par = [-1,0,1]\n\n\nOutput:\n \n42\n\n\nExplanation:\n\n\n\n\n\n\nThe subtree rooted at node 0 includes nodes \n{0, 1, 2}\n. The subset \n{34, 1, 2}\n is\n \ngood as the digits 3, 4, 1 and 2 appear only once. The score of this subset is \n34 + 1 + 2 = 37\n.\n\n\nThe subtree rooted at node 1 includes node \n{1, 2}\n. The subset \n{1, 2}\n is\n \ngood as the digits 1 and 2 appear only once. The score of this subset is \n1 + 2 = 3\n.\n\n\nThe subtree rooted at node 2 includes only node \n{2}\n. The subset \n{2}\n is\n \ngood. The score of this subset is 2.\n\n\nThe \nmaxScore\n array is \n[37, 3, 2]\n, and the sum of all values in \nmaxScore\n is \n37 + 3 + 2 = 42\n. Thus, the answer is 42.\n\n\n\n\n\n\nExample 4:\n\n\n\n\nInput:\n \nvals = [3,22,5], par = [-1,0,1]\n\n\nOutput:\n \n18\n\n\nExplanation:\n\n\n\n\nThe subtree rooted at node 0 includes nodes \n{0, 1, 2}\n. The subset \n{3, 22, 5}\n is\n \nnot good, as digit 2 appears twice. Therefore, the subset \n{3, 5}\n is valid. The score of this subset is \n3 + 5 = 8\n.\n\n\nThe subtree rooted at node 1 includes nodes \n{1, 2}\n. The subset \n{22, 5}\n is\n \nnot good, as digit 2 appears twice. Therefore, the subset \n{5}\n is valid. The score of this subset is 5.\n\n\nThe subtree rooted at node 2 includes \n{2}\n. The subset \n{5}\n is\n \ngood. The score of this subset is 5.\n\n\nThe \nmaxScore\n array is \n[8, 5, 5]\n, and the sum of all values in \nmaxScore\n is \n8 + 5 + 5 = 18\n. Thus, the answer is 18.\n\n\n\n\n\n\n\n\n\n\n \n\n\nConstraints:\n\n\n\n\n1 <= n == vals.length <= 500\n\n\n1 <= vals[i] <= 10\n9\n\n\npar.length == n\n\n\npar[0] == -1\n\n\n0 <= par[i] < n\n for \ni\n in \n[1, n - 1]\n\n\nThe input is generated such that the parent array \npar\n represents a valid tree.",
+        "temas": [
+            "Array",
+            "Dynamic Programming",
+            "Bit Manipulation",
+            "Tree",
+            "Depth-First Search",
+            "Bitmask"
+        ],
+        "dificuldade": "Difícil",
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 3563,
@@ -25,7 +60,23 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
+    },
+    {
+        "id": 3579,
+        "slug": "minimum-steps-to-convert-string-with-operations",
+        "url": "https://leetcode.com/problems/minimum-steps-to-convert-string-with-operations/",
+        "titulo": "Minimum Steps to Convert String with Operations",
+        "enunciado": "You are given two strings, \nword1\n and \nword2\n, of equal length. You need to transform \nword1\n into \nword2\n.\n\n\nFor this, divide \nword1\n into one or more \ncontiguous \nsubstrings\n. For each substring \nsubstr\n you can perform the following operations:\n\n\n\n\n\n\nReplace:\n Replace the character at any one index of \nsubstr\n with another lowercase English letter.\n\n\n\n\n\n\nSwap:\n Swap any two characters in \nsubstr\n.\n\n\n\n\n\n\nReverse Substring:\n Reverse \nsubstr\n.\n\n\n\n\n\n\nEach of these counts as \none\n operation and each character of each substring can be used in each type of operation at most once (i.e. no single index may be involved in more than one replace, one swap, or one reverse).\n\n\nReturn the \nminimum number of operations\n required to transform \nword1\n into \nword2\n.\n\n\n \n\n\nExample 1:\n\n\n\n\nInput:\n \nword1 = \"abcdf\", word2 = \"dacbe\"\n\n\nOutput:\n \n4\n\n\nExplanation:\n\n\nDivide \nword1\n into \n\"ab\"\n, \n\"c\"\n, and \n\"df\"\n. The operations are:\n\n\n\n\nFor the substring \n\"ab\"\n,\n\n\t\n\n\nPerform operation of type 3 on \n\"ab\" -> \"ba\"\n.\n\n\nPerform operation of type 1 on \n\"ba\" -> \"da\"\n.\n\n\n\n\n\n\nFor the substring \n\"c\"\n do no operations.\n\n\nFor the substring \n\"df\"\n,\n\t\n\n\nPerform operation of type 1 on \n\"df\" -> \"bf\"\n.\n\n\nPerform operation of type 1 on \n\"bf\" -> \"be\"\n.\n\n\n\n\n\n\n\n\n\n\nExample 2:\n\n\n\n\nInput:\n \nword1 = \"abceded\", word2 = \"baecfef\"\n\n\nOutput:\n \n4\n\n\nExplanation:\n\n\nDivide \nword1\n into \n\"ab\"\n, \n\"ce\"\n, and \n\"ded\"\n. The operations are:\n\n\n\n\nFor the substring \n\"ab\"\n,\n\n\t\n\n\nPerform operation of type 2 on \n\"ab\" -> \"ba\"\n.\n\n\n\n\n\n\nFor the substring \n\"ce\"\n,\n\t\n\n\nPerform operation of type 2 on \n\"ce\" -> \"ec\"\n.\n\n\n\n\n\n\nFor the substring \n\"ded\"\n,\n\t\n\n\nPerform operation of type 1 on \n\"ded\" -> \"fed\"\n.\n\n\nPerform operation of type 1 on \n\"fed\" -> \"fef\"\n.\n\n\n\n\n\n\n\n\n\n\nExample 3:\n\n\n\n\nInput:\n \nword1 = \"abcdef\", word2 = \"fedabc\"\n\n\nOutput:\n \n2\n\n\nExplanation:\n\n\nDivide \nword1\n into \n\"abcdef\"\n. The operations are:\n\n\n\n\nFor the substring \n\"abcdef\"\n,\n\n\t\n\n\nPerform operation of type 3 on \n\"abcdef\" -> \"fedcba\"\n.\n\n\nPerform operation of type 2 on \n\"fedcba\" -> \"fedabc\"\n.\n\n\n\n\n\n\n\n\n\n\n \n\n\nConstraints:\n\n\n\n\n1 <= word1.length == word2.length <= 100\n\n\nword1\n and \nword2\n consist only of lowercase English letters.",
+        "temas": [
+            "String",
+            "Dynamic Programming",
+            "Greedy"
+        ],
+        "dificuldade": "Difícil",
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 3544,
@@ -40,7 +91,8 @@
             "Depth-First Search"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 3562,
@@ -55,7 +107,8 @@
             "Depth-First Search"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 3553,
@@ -69,7 +122,8 @@
             "Depth-First Search"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 3534,
@@ -85,7 +139,8 @@
             "Sorting"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 3539,
@@ -102,7 +157,8 @@
             "Bitmask"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3548,
@@ -118,7 +174,8 @@
             "Prefix Sum"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 3547,
@@ -133,7 +190,8 @@
             "Sorting"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Greedy"
+        "tema_principal": "Greedy",
+        "has_image": true
     },
     {
         "id": 3559,
@@ -149,7 +207,8 @@
             "Depth-First Search"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 3533,
@@ -164,7 +223,8 @@
             "Bitmask"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3525,
@@ -178,7 +238,8 @@
             "Segment Tree"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3538,
@@ -192,7 +253,8 @@
             "Prefix Sum"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3515,
@@ -208,7 +270,8 @@
             "Segment Tree"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 3530,
@@ -225,7 +288,8 @@
             "Bitmask"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 3518,
@@ -241,7 +305,8 @@
             "Counting"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Hash Table"
+        "tema_principal": "Hash Table",
+        "has_image": false
     },
     {
         "id": 3519,
@@ -255,7 +320,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": false
     },
     {
         "id": 3504,
@@ -269,7 +335,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Two Pointers"
+        "tema_principal": "Two Pointers",
+        "has_image": false
     },
     {
         "id": 3501,
@@ -284,7 +351,8 @@
             "Segment Tree"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3490,
@@ -296,7 +364,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Dynamic Programming"
+        "tema_principal": "Dynamic Programming",
+        "has_image": false
     },
     {
         "id": 3486,
@@ -312,7 +381,8 @@
             "Prefix Sum"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 3480,
@@ -327,7 +397,8 @@
             "Prefix Sum"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3485,
@@ -341,7 +412,8 @@
             "Trie"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3470,
@@ -356,7 +428,8 @@
             "Enumeration"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3464,
@@ -370,7 +443,8 @@
             "Greedy"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 3509,
@@ -384,7 +458,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3454,
@@ -399,7 +474,8 @@
             "Line Sweep"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 3463,
@@ -414,7 +490,8 @@
             "Number Theory"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": false
     },
     {
         "id": 3510,
@@ -432,7 +509,8 @@
             "Ordered Set"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3474,
@@ -446,7 +524,8 @@
             "String Matching"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 3500,
@@ -460,7 +539,8 @@
             "Prefix Sum"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3449,
@@ -474,14 +554,15 @@
             "Greedy"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3445,
         "slug": "maximum-difference-between-even-and-odd-frequency-ii",
         "url": "https://leetcode.com/problems/maximum-difference-between-even-and-odd-frequency-ii/",
         "titulo": "Maximum Difference Between Even and Odd Frequency II",
-        "enunciado": "You are given a string \ns\n and an integer \nk\n. Your task is to find the \nmaximum\n difference between the frequency of \ntwo\n characters, \nfreq[a] - freq[b]\n, in a \nsubstring\n \nsubs\n of \ns\n, such that:\n\n\n\n\nsubs\n has a size of \nat least\n \nk\n.\n\n\nCharacter \na\n has an \nodd frequency\n in \nsubs\n.\n\n\nCharacter \nb\n has an \neven frequency\n in \nsubs\n.\n\n\n\n\nReturn the \nmaximum\n difference.\n\n\nNote\n that \nsubs\n can contain more than 2 \ndistinct\n characters.\n\n\n \n\n\nExample 1:\n\n\n\n\nInput:\n \ns = \"12233\", k = 4\n\n\nOutput:\n \n-1\n\n\nExplanation:\n\n\nFor the substring \n\"12233\"\n, the frequency of \n'1'\n is 1 and the frequency of \n'3'\n is 2. The difference is \n1 - 2 = -1\n.\n\n\n\n\nExample 2:\n\n\n\n\nInput:\n \ns = \"1122211\", k = 3\n\n\nOutput:\n \n1\n\n\nExplanation:\n\n\nFor the substring \n\"11222\"\n, the frequency of \n'2'\n is 3 and the frequency of \n'1'\n is 2. The difference is \n3 - 2 = 1\n.\n\n\n\n\nExample 3:\n\n\n\n\nInput:\n \ns = \"110\", k = 3\n\n\nOutput:\n \n-1\n\n\n\n\n \n\n\nConstraints:\n\n\n\n\n3 <= s.length <= 3 * 10\n4\n\n\ns\n consists only of digits \n'0'\n to \n'4'\n.\n\n\nThe input is generated that at least one substring has a character with an even frequency and a character with an odd frequency.\n\n\n1 <= k <= s.length",
+        "enunciado": "You are given a string \ns\n and an integer \nk\n. Your task is to find the \nmaximum\n difference between the frequency of \ntwo\n characters, \nfreq[a] - freq[b]\n, in a \nsubstring\n \nsubs\n of \ns\n, such that:\n\n\n\n\nsubs\n has a size of \nat least\n \nk\n.\n\n\nCharacter \na\n has an \nodd frequency\n in \nsubs\n.\n\n\nCharacter \nb\n has a \nnon-zero\n \neven frequency\n in \nsubs\n.\n\n\n\n\nReturn the \nmaximum\n difference.\n\n\nNote\n that \nsubs\n can contain more than 2 \ndistinct\n characters.\n\n\n \n\n\nExample 1:\n\n\n\n\nInput:\n \ns = \"12233\", k = 4\n\n\nOutput:\n \n-1\n\n\nExplanation:\n\n\nFor the substring \n\"12233\"\n, the frequency of \n'1'\n is 1 and the frequency of \n'3'\n is 2. The difference is \n1 - 2 = -1\n.\n\n\n\n\nExample 2:\n\n\n\n\nInput:\n \ns = \"1122211\", k = 3\n\n\nOutput:\n \n1\n\n\nExplanation:\n\n\nFor the substring \n\"11222\"\n, the frequency of \n'2'\n is 3 and the frequency of \n'1'\n is 2. The difference is \n3 - 2 = 1\n.\n\n\n\n\nExample 3:\n\n\n\n\nInput:\n \ns = \"110\", k = 3\n\n\nOutput:\n \n-1\n\n\n\n\n \n\n\nConstraints:\n\n\n\n\n3 <= s.length <= 3 * 10\n4\n\n\ns\n consists only of digits \n'0'\n to \n'4'\n.\n\n\nThe input is generated that at least one substring has a character with an even frequency and a character with an odd frequency.\n\n\n1 <= k <= s.length",
         "temas": [
             "String",
             "Sliding Window",
@@ -489,7 +570,8 @@
             "Prefix Sum"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 3495,
@@ -503,7 +585,8 @@
             "Bit Manipulation"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3426,
@@ -516,7 +599,8 @@
             "Combinatorics"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": true
     },
     {
         "id": 3459,
@@ -531,7 +615,8 @@
             "Matrix"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 3430,
@@ -546,7 +631,8 @@
             "Monotonic Stack"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3505,
@@ -563,7 +649,8 @@
             "Heap (Priority Queue)"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3435,
@@ -580,7 +667,8 @@
             "Enumeration"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3399,
@@ -593,7 +681,8 @@
             "Binary Search"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 3441,
@@ -606,7 +695,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 3395,
@@ -621,7 +711,8 @@
             "Combinatorics"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3444,
@@ -638,7 +729,8 @@
             "Bitmask"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3448,
@@ -651,7 +743,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 3455,
@@ -666,7 +759,8 @@
             "String Matching"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Two Pointers"
+        "tema_principal": "Two Pointers",
+        "has_image": false
     },
     {
         "id": 3398,
@@ -680,7 +774,8 @@
             "Enumeration"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3382,
@@ -697,7 +792,8 @@
             "Sorting"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 3410,
@@ -711,7 +807,8 @@
             "Segment Tree"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3425,
@@ -727,7 +824,8 @@
             "Prefix Sum"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 3405,
@@ -740,7 +838,8 @@
             "Combinatorics"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": false
     },
     {
         "id": 3378,
@@ -756,7 +855,8 @@
             "Number Theory"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 3367,
@@ -770,7 +870,8 @@
             "Depth-First Search"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Dynamic Programming"
+        "tema_principal": "Dynamic Programming",
+        "has_image": true
     },
     {
         "id": 3420,
@@ -788,7 +889,8 @@
             "Monotonic Queue"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3357,
@@ -802,7 +904,8 @@
             "Greedy"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3363,
@@ -816,7 +919,8 @@
             "Matrix"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 3351,
@@ -830,7 +934,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3373,
@@ -844,7 +949,8 @@
             "Breadth-First Search"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Tree"
+        "tema_principal": "Tree",
+        "has_image": true
     },
     {
         "id": 3347,
@@ -860,7 +966,8 @@
             "Prefix Sum"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3389,
@@ -876,7 +983,8 @@
             "Enumeration"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Hash Table"
+        "tema_principal": "Hash Table",
+        "has_image": false
     },
     {
         "id": 3343,
@@ -891,7 +999,8 @@
             "Combinatorics"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": false
     },
     {
         "id": 3348,
@@ -907,7 +1016,8 @@
             "Number Theory"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": false
     },
     {
         "id": 3352,
@@ -922,7 +1032,8 @@
             "Combinatorics"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": false
     },
     {
         "id": 3337,
@@ -938,7 +1049,8 @@
             "Counting"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Hash Table"
+        "tema_principal": "Hash Table",
+        "has_image": false
     },
     {
         "id": 3333,
@@ -952,7 +1064,8 @@
             "Prefix Sum"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 3336,
@@ -967,7 +1080,8 @@
             "Number Theory"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3317,
@@ -981,7 +1095,8 @@
             "Combinatorics"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": false
     },
     {
         "id": 3327,
@@ -998,7 +1113,8 @@
             "Hash Function"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 3307,
@@ -1012,7 +1128,8 @@
             "Recursion"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": false
     },
     {
         "id": 3321,
@@ -1027,7 +1144,8 @@
             "Heap (Priority Queue)"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3320,
@@ -1040,7 +1158,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 3312,
@@ -1059,7 +1178,8 @@
             "Prefix Sum"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3303,
@@ -1072,7 +1192,8 @@
             "String Matching"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 3311,
@@ -1087,7 +1208,8 @@
             "Matrix"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 3287,
@@ -1101,7 +1223,8 @@
             "Bit Manipulation"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3298,
@@ -1115,7 +1238,8 @@
             "Sliding Window"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Hash Table"
+        "tema_principal": "Hash Table",
+        "has_image": false
     },
     {
         "id": 3288,
@@ -1129,7 +1253,8 @@
             "Sorting"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3276,
@@ -1145,7 +1270,8 @@
             "Bitmask"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 3414,
@@ -1160,7 +1286,8 @@
             "Sorting"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3283,
@@ -1177,7 +1304,8 @@
             "Bitmask"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 3292,
@@ -1196,7 +1324,8 @@
             "Hash Function"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3266,
@@ -1210,7 +1339,8 @@
             "Simulation"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3260,
@@ -1226,7 +1356,8 @@
             "Number Theory"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": false
     },
     {
         "id": 3277,
@@ -1239,7 +1370,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3256,
@@ -1254,7 +1386,8 @@
             "Enumeration"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 3272,
@@ -1269,7 +1402,8 @@
             "Enumeration"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Hash Table"
+        "tema_principal": "Hash Table",
+        "has_image": false
     },
     {
         "id": 3261,
@@ -1285,7 +1419,8 @@
             "Prefix Sum"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3267,
@@ -1301,7 +1436,8 @@
             "Enumeration"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3257,
@@ -1316,7 +1452,8 @@
             "Enumeration"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 3251,
@@ -1332,7 +1469,8 @@
             "Prefix Sum"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3250,
@@ -1348,7 +1486,8 @@
             "Prefix Sum"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3241,
@@ -1363,7 +1502,8 @@
             "Graph"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Dynamic Programming"
+        "tema_principal": "Dynamic Programming",
+        "has_image": true
     },
     {
         "id": 3273,
@@ -1377,7 +1517,8 @@
             "Sorting"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3245,
@@ -1390,7 +1531,8 @@
             "Binary Indexed Tree"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 3244,
@@ -1405,7 +1547,8 @@
             "Ordered Set"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 3219,
@@ -1419,7 +1562,8 @@
             "Sorting"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 3213,
@@ -1434,7 +1578,8 @@
             "Suffix Array"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3235,
@@ -1451,7 +1596,8 @@
             "Geometry"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 3225,
@@ -1466,7 +1612,8 @@
             "Prefix Sum"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 3209,
@@ -1481,7 +1628,8 @@
             "Segment Tree"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3193,
@@ -1494,7 +1642,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3197,
@@ -1508,7 +1657,8 @@
             "Enumeration"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 3229,
@@ -1524,7 +1674,8 @@
             "Monotonic Stack"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3177,
@@ -1538,7 +1689,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3181,
@@ -1552,7 +1704,8 @@
             "Bit Manipulation"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3203,
@@ -1567,7 +1720,8 @@
             "Graph"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Tree"
+        "tema_principal": "Tree",
+        "has_image": true
     },
     {
         "id": 3187,
@@ -1581,7 +1735,8 @@
             "Segment Tree"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3171,
@@ -1596,7 +1751,8 @@
             "Segment Tree"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3161,
@@ -1611,7 +1767,8 @@
             "Segment Tree"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 3149,
@@ -1626,7 +1783,8 @@
             "Bitmask"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 3165,
@@ -1641,7 +1799,8 @@
             "Segment Tree"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3154,
@@ -1657,7 +1816,8 @@
             "Combinatorics"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": false
     },
     {
         "id": 3145,
@@ -1671,7 +1831,8 @@
             "Bit Manipulation"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3130,
@@ -1684,7 +1845,8 @@
             "Prefix Sum"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Dynamic Programming"
+        "tema_principal": "Dynamic Programming",
+        "has_image": false
     },
     {
         "id": 3139,
@@ -1698,7 +1860,8 @@
             "Enumeration"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3123,
@@ -1714,7 +1877,8 @@
             "Shortest Path"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Depth-First Search"
+        "tema_principal": "Depth-First Search",
+        "has_image": true
     },
     {
         "id": 3113,
@@ -1729,7 +1893,8 @@
             "Monotonic Stack"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3093,
@@ -1743,7 +1908,8 @@
             "Trie"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3116,
@@ -1760,7 +1926,8 @@
             "Number Theory"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3117,
@@ -1777,7 +1944,8 @@
             "Queue"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3134,
@@ -1792,7 +1960,8 @@
             "Sliding Window"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3072,
@@ -1807,7 +1976,8 @@
             "Simulation"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3108,
@@ -1822,7 +1992,8 @@
             "Graph"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 3082,
@@ -1835,7 +2006,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3102,
@@ -1851,7 +2023,8 @@
             "Ordered Set"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3086,
@@ -1866,7 +2039,8 @@
             "Prefix Sum"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3098,
@@ -1880,7 +2054,8 @@
             "Sorting"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3077,
@@ -1894,7 +2069,8 @@
             "Prefix Sum"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3017,
@@ -1907,7 +2083,8 @@
             "Prefix Sum"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Graph"
+        "tema_principal": "Graph",
+        "has_image": true
     },
     {
         "id": 3068,
@@ -1924,7 +2101,8 @@
             "Sorting"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 3045,
@@ -1941,7 +2119,8 @@
             "Hash Function"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3008,
@@ -1958,7 +2137,8 @@
             "Hash Function"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Two Pointers"
+        "tema_principal": "Two Pointers",
+        "has_image": false
     },
     {
         "id": 3041,
@@ -1972,7 +2152,8 @@
             "Sorting"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3031,
@@ -1987,7 +2168,8 @@
             "Hash Function"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 3036,
@@ -2002,7 +2184,8 @@
             "Hash Function"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3049,
@@ -2017,7 +2200,8 @@
             "Heap (Priority Queue)"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3027,
@@ -2033,7 +2217,8 @@
             "Enumeration"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 3022,
@@ -2047,7 +2232,8 @@
             "Bit Manipulation"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3013,
@@ -2062,7 +2248,8 @@
             "Heap (Priority Queue)"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2972,
@@ -2076,7 +2263,8 @@
             "Binary Search"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2999,
@@ -2090,7 +2278,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": false
     },
     {
         "id": 2977,
@@ -2107,7 +2296,8 @@
             "Shortest Path"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 3003,
@@ -2122,7 +2312,8 @@
             "Bitmask"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 2954,
@@ -2136,7 +2327,8 @@
             "Combinatorics"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2953,
@@ -2150,7 +2342,8 @@
             "Sliding Window"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Hash Table"
+        "tema_principal": "Hash Table",
+        "has_image": false
     },
     {
         "id": 2973,
@@ -2166,7 +2359,8 @@
             "Heap (Priority Queue)"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Dynamic Programming"
+        "tema_principal": "Dynamic Programming",
+        "has_image": true
     },
     {
         "id": 2959,
@@ -2182,7 +2376,8 @@
             "Shortest Path"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Bit Manipulation"
+        "tema_principal": "Bit Manipulation",
+        "has_image": true
     },
     {
         "id": 2963,
@@ -2197,7 +2392,8 @@
             "Combinatorics"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2945,
@@ -2215,7 +2411,8 @@
             "Monotonic Queue"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2949,
@@ -2231,7 +2428,8 @@
             "Prefix Sum"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Hash Table"
+        "tema_principal": "Hash Table",
+        "has_image": false
     },
     {
         "id": 2983,
@@ -2245,7 +2443,8 @@
             "Prefix Sum"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Hash Table"
+        "tema_principal": "Hash Table",
+        "has_image": false
     },
     {
         "id": 2935,
@@ -2261,7 +2460,8 @@
             "Sliding Window"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2968,
@@ -2277,7 +2477,8 @@
             "Prefix Sum"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2926,
@@ -2293,7 +2494,8 @@
             "Segment Tree"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2940,
@@ -2311,7 +2513,8 @@
             "Monotonic Stack"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2920,
@@ -2328,7 +2531,8 @@
             "Memoization"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 2897,
@@ -2343,7 +2547,8 @@
             "Bit Manipulation"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2876,
@@ -2357,7 +2562,8 @@
             "Memoization"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Dynamic Programming"
+        "tema_principal": "Dynamic Programming",
+        "has_image": true
     },
     {
         "id": 2916,
@@ -2372,7 +2578,8 @@
             "Segment Tree"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2867,
@@ -2388,7 +2595,8 @@
             "Number Theory"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": true
     },
     {
         "id": 2931,
@@ -2404,7 +2612,8 @@
             "Matrix"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2858,
@@ -2419,7 +2628,8 @@
             "Graph"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Dynamic Programming"
+        "tema_principal": "Dynamic Programming",
+        "has_image": true
     },
     {
         "id": 2902,
@@ -2434,7 +2644,8 @@
             "Sliding Window"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2846,
@@ -2449,7 +2660,8 @@
             "Strongly Connected Component"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 2872,
@@ -2462,7 +2674,8 @@
             "Depth-First Search"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Tree"
+        "tema_principal": "Tree",
+        "has_image": true
     },
     {
         "id": 2842,
@@ -2478,7 +2691,8 @@
             "Combinatorics"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Hash Table"
+        "tema_principal": "Hash Table",
+        "has_image": false
     },
     {
         "id": 2862,
@@ -2492,7 +2706,8 @@
             "Number Theory"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2836,
@@ -2506,7 +2721,8 @@
             "Bit Manipulation"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2835,
@@ -2520,7 +2736,8 @@
             "Bit Manipulation"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2851,
@@ -2535,7 +2752,8 @@
             "String Matching"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": false
     },
     {
         "id": 2827,
@@ -2548,7 +2766,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": false
     },
     {
         "id": 2818,
@@ -2566,7 +2785,8 @@
             "Number Theory"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2809,
@@ -2580,7 +2800,8 @@
             "Sorting"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2801,
@@ -2593,7 +2814,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 2790,
@@ -2609,7 +2831,8 @@
             "Sorting"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2791,
@@ -2625,7 +2848,8 @@
             "Bitmask"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Dynamic Programming"
+        "tema_principal": "Dynamic Programming",
+        "has_image": true
     },
     {
         "id": 2813,
@@ -2642,7 +2866,8 @@
             "Heap (Priority Queue)"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2781,
@@ -2657,7 +2882,8 @@
             "Sliding Window"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2911,
@@ -2671,7 +2897,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Two Pointers"
+        "tema_principal": "Two Pointers",
+        "has_image": false
     },
     {
         "id": 2763,
@@ -2685,7 +2912,8 @@
             "Ordered Set"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2751,
@@ -2700,7 +2928,8 @@
             "Simulation"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 2736,
@@ -2718,7 +2947,8 @@
             "Monotonic Stack"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2709,
@@ -2733,7 +2963,8 @@
             "Number Theory"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2732,
@@ -2748,7 +2979,8 @@
             "Matrix"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2713,
@@ -2767,7 +2999,8 @@
             "Ordered Set"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 2742,
@@ -2780,7 +3013,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2699,
@@ -2794,7 +3028,8 @@
             "Shortest Path"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Graph"
+        "tema_principal": "Graph",
+        "has_image": true
     },
     {
         "id": 2681,
@@ -2810,7 +3045,8 @@
             "Prefix Sum"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2659,
@@ -2828,7 +3064,8 @@
             "Ordered Set"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2719,
@@ -2842,7 +3079,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": false
     },
     {
         "id": 2646,
@@ -2858,7 +3096,8 @@
             "Graph"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 2612,
@@ -2872,7 +3111,8 @@
             "Ordered Set"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2603,
@@ -2887,7 +3127,8 @@
             "Topological Sort"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 2577,
@@ -2904,7 +3145,8 @@
             "Shortest Path"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 2573,
@@ -2921,7 +3163,8 @@
             "Matrix"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2569,
@@ -2934,7 +3177,8 @@
             "Segment Tree"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2565,
@@ -2948,7 +3192,8 @@
             "Binary Search"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Two Pointers"
+        "tema_principal": "Two Pointers",
+        "has_image": false
     },
     {
         "id": 2617,
@@ -2967,7 +3212,8 @@
             "Monotonic Stack"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 2561,
@@ -2981,7 +3227,8 @@
             "Greedy"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2663,
@@ -2994,7 +3241,8 @@
             "Greedy"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 2552,
@@ -3010,7 +3258,8 @@
             "Prefix Sum"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2551,
@@ -3025,7 +3274,8 @@
             "Heap (Priority Queue)"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2642,
@@ -3040,7 +3290,8 @@
             "Shortest Path"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Graph"
+        "tema_principal": "Graph",
+        "has_image": true
     },
     {
         "id": 2608,
@@ -3053,7 +3304,8 @@
             "Graph"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Breadth-First Search"
+        "tema_principal": "Breadth-First Search",
+        "has_image": true
     },
     {
         "id": 2589,
@@ -3069,7 +3321,8 @@
             "Sorting"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2581,
@@ -3085,7 +3338,8 @@
             "Depth-First Search"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 2585,
@@ -3098,7 +3352,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2584,
@@ -3113,7 +3368,8 @@
             "Number Theory"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 2532,
@@ -3127,7 +3383,8 @@
             "Simulation"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 2543,
@@ -3140,7 +3397,8 @@
             "Number Theory"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": false
     },
     {
         "id": 2547,
@@ -3155,7 +3413,8 @@
             "Counting"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2538,
@@ -3170,7 +3429,8 @@
             "Depth-First Search"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 2528,
@@ -3187,7 +3447,8 @@
             "Prefix Sum"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2514,
@@ -3203,7 +3464,8 @@
             "Counting"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Hash Table"
+        "tema_principal": "Hash Table",
+        "has_image": false
     },
     {
         "id": 2518,
@@ -3216,7 +3478,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2509,
@@ -3230,7 +3493,8 @@
             "Binary Tree"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 2508,
@@ -3243,7 +3507,8 @@
             "Graph"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Hash Table"
+        "tema_principal": "Hash Table",
+        "has_image": true
     },
     {
         "id": 2499,
@@ -3258,7 +3523,8 @@
             "Counting"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2503,
@@ -3276,7 +3542,8 @@
             "Matrix"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 2493,
@@ -3291,7 +3558,8 @@
             "Graph"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Depth-First Search"
+        "tema_principal": "Depth-First Search",
+        "has_image": true
     },
     {
         "id": 2484,
@@ -3304,7 +3572,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 2488,
@@ -3318,7 +3587,8 @@
             "Prefix Sum"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2478,
@@ -3331,7 +3601,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 2468,
@@ -3345,7 +3616,8 @@
             "Enumeration"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 2472,
@@ -3360,7 +3632,8 @@
             "Greedy"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Two Pointers"
+        "tema_principal": "Two Pointers",
+        "has_image": false
     },
     {
         "id": 2463,
@@ -3374,7 +3647,8 @@
             "Sorting"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 2454,
@@ -3391,7 +3665,8 @@
             "Monotonic Stack"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2458,
@@ -3407,7 +3682,8 @@
             "Binary Tree"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 2449,
@@ -3421,7 +3697,8 @@
             "Sorting"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2448,
@@ -3437,7 +3714,8 @@
             "Prefix Sum"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2440,
@@ -3453,7 +3731,8 @@
             "Enumeration"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 2444,
@@ -3468,7 +3747,8 @@
             "Monotonic Queue"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2407,
@@ -3486,7 +3766,8 @@
             "Monotonic Queue"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2435,
@@ -3500,7 +3781,8 @@
             "Matrix"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 2426,
@@ -3518,7 +3800,8 @@
             "Ordered Set"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2430,
@@ -3534,7 +3817,8 @@
             "Hash Function"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 2421,
@@ -3551,7 +3835,8 @@
             "Sorting"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 2412,
@@ -3565,7 +3850,8 @@
             "Sorting"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2416,
@@ -3580,7 +3866,8 @@
             "Counting"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2402,
@@ -3596,7 +3883,8 @@
             "Simulation"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2392,
@@ -3611,7 +3899,8 @@
             "Matrix"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 2382,
@@ -3626,7 +3915,8 @@
             "Ordered Set"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2386,
@@ -3640,7 +3930,8 @@
             "Heap (Priority Queue)"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2376,
@@ -3653,7 +3944,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": false
     },
     {
         "id": 2366,
@@ -3667,7 +3959,8 @@
             "Greedy"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2398,
@@ -3685,7 +3978,8 @@
             "Monotonic Queue"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2360,
@@ -3700,7 +3994,8 @@
             "Topological Sort"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Depth-First Search"
+        "tema_principal": "Depth-First Search",
+        "has_image": true
     },
     {
         "id": 2350,
@@ -3714,7 +4009,8 @@
             "Greedy"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2354,
@@ -3729,7 +4025,8 @@
             "Bit Manipulation"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2344,
@@ -3745,7 +4042,8 @@
             "Number Theory"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2334,
@@ -3760,7 +4058,8 @@
             "Monotonic Stack"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2338,
@@ -3775,7 +4074,8 @@
             "Number Theory"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": false
     },
     {
         "id": 2328,
@@ -3794,7 +4094,8 @@
             "Matrix"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 2318,
@@ -3807,7 +4108,8 @@
             "Memoization"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Dynamic Programming"
+        "tema_principal": "Dynamic Programming",
+        "has_image": false
     },
     {
         "id": 2322,
@@ -3822,7 +4124,8 @@
             "Depth-First Search"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 2302,
@@ -3837,7 +4140,8 @@
             "Prefix Sum"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2301,
@@ -3852,7 +4156,8 @@
             "String Matching"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2306,
@@ -3868,7 +4173,8 @@
             "Enumeration"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2296,
@@ -3885,7 +4191,8 @@
             "Doubly-Linked List"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Linked List"
+        "tema_principal": "Linked List",
+        "has_image": false
     },
     {
         "id": 2286,
@@ -3900,7 +4207,8 @@
             "Segment Tree"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Binary Search"
+        "tema_principal": "Binary Search",
+        "has_image": false
     },
     {
         "id": 2290,
@@ -3917,7 +4225,8 @@
             "Shortest Path"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 2281,
@@ -3932,7 +4241,8 @@
             "Prefix Sum"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2246,
@@ -3949,7 +4259,8 @@
             "Topological Sort"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 2272,
@@ -3962,7 +4273,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2276,
@@ -3976,7 +4288,8 @@
             "Ordered Set"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Design"
+        "tema_principal": "Design",
+        "has_image": false
     },
     {
         "id": 2242,
@@ -3991,7 +4304,8 @@
             "Enumeration"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 2267,
@@ -4005,7 +4319,8 @@
             "Matrix"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 2258,
@@ -4020,7 +4335,8 @@
             "Matrix"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 2262,
@@ -4034,7 +4350,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Hash Table"
+        "tema_principal": "Hash Table",
+        "has_image": false
     },
     {
         "id": 2251,
@@ -4051,7 +4368,8 @@
             "Ordered Set"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 2234,
@@ -4069,7 +4387,8 @@
             "Prefix Sum"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2223,
@@ -4086,7 +4405,8 @@
             "Hash Function"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 2203,
@@ -4099,7 +4419,8 @@
             "Shortest Path"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Graph"
+        "tema_principal": "Graph",
+        "has_image": true
     },
     {
         "id": 2213,
@@ -4114,7 +4435,8 @@
             "Ordered Set"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2209,
@@ -4128,7 +4450,8 @@
             "Prefix Sum"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": true
     },
     {
         "id": 2197,
@@ -4143,7 +4466,8 @@
             "Number Theory"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2183,
@@ -4157,7 +4481,8 @@
             "Number Theory"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2188,
@@ -4170,7 +4495,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2172,
@@ -4185,7 +4511,8 @@
             "Bitmask"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2167,
@@ -4198,7 +4525,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 2179,
@@ -4216,7 +4544,8 @@
             "Ordered Set"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2157,
@@ -4230,7 +4559,8 @@
             "Union Find"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 2156,
@@ -4245,7 +4575,8 @@
             "Hash Function"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 2151,
@@ -4260,7 +4591,8 @@
             "Enumeration"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 2163,
@@ -4274,7 +4606,8 @@
             "Heap (Priority Queue)"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2141,
@@ -4289,7 +4622,8 @@
             "Sorting"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 2136,
@@ -4303,7 +4637,8 @@
             "Sorting"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 2147,
@@ -4317,7 +4652,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": true
     },
     {
         "id": 2127,
@@ -4331,7 +4667,8 @@
             "Topological Sort"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Depth-First Search"
+        "tema_principal": "Depth-First Search",
+        "has_image": true
     },
     {
         "id": 2122,
@@ -4347,7 +4684,8 @@
             "Enumeration"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2111,
@@ -4360,7 +4698,8 @@
             "Binary Search"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2106,
@@ -4375,7 +4714,8 @@
             "Prefix Sum"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 2117,
@@ -4387,7 +4727,8 @@
             "Math"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": false
     },
     {
         "id": 2092,
@@ -4403,7 +4744,8 @@
             "Sorting"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Depth-First Search"
+        "tema_principal": "Depth-First Search",
+        "has_image": false
     },
     {
         "id": 2102,
@@ -4418,7 +4760,8 @@
             "Ordered Set"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Design"
+        "tema_principal": "Design",
+        "has_image": false
     },
     {
         "id": 2081,
@@ -4431,7 +4774,8 @@
             "Enumeration"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": false
     },
     {
         "id": 2097,
@@ -4445,7 +4789,8 @@
             "Eulerian Circuit"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Depth-First Search"
+        "tema_principal": "Depth-First Search",
+        "has_image": false
     },
     {
         "id": 2132,
@@ -4460,7 +4805,8 @@
             "Prefix Sum"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 2076,
@@ -4473,7 +4819,8 @@
             "Graph"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Union Find"
+        "tema_principal": "Union Find",
+        "has_image": false
     },
     {
         "id": 2088,
@@ -4487,7 +4834,8 @@
             "Matrix"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 2065,
@@ -4501,7 +4849,8 @@
             "Graph"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 2060,
@@ -4514,7 +4863,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 2071,
@@ -4532,7 +4882,8 @@
             "Monotonic Queue"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2050,
@@ -4547,7 +4898,8 @@
             "Topological Sort"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 2045,
@@ -4561,7 +4913,8 @@
             "Shortest Path"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Breadth-First Search"
+        "tema_principal": "Breadth-First Search",
+        "has_image": true
     },
     {
         "id": 2056,
@@ -4576,7 +4929,8 @@
             "Simulation"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 2035,
@@ -4594,7 +4948,8 @@
             "Bitmask"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 2030,
@@ -4609,7 +4964,8 @@
             "Monotonic Stack"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": true
     },
     {
         "id": 2040,
@@ -4622,7 +4978,8 @@
             "Binary Search"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2019,
@@ -4639,7 +4996,8 @@
             "Memoization"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 2014,
@@ -4655,7 +5013,8 @@
             "Enumeration"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": true
     },
     {
         "id": 2025,
@@ -4671,7 +5030,8 @@
             "Prefix Sum"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2003,
@@ -4686,7 +5046,8 @@
             "Union Find"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Dynamic Programming"
+        "tema_principal": "Dynamic Programming",
+        "has_image": true
     },
     {
         "id": 1998,
@@ -4702,7 +5063,8 @@
             "Number Theory"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2009,
@@ -4717,7 +5079,8 @@
             "Sliding Window"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1987,
@@ -4730,7 +5093,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 1982,
@@ -4743,7 +5107,8 @@
             "Divide and Conquer"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1994,
@@ -4759,7 +5124,8 @@
             "Bitmask"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1970,
@@ -4776,7 +5142,8 @@
             "Matrix"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 1964,
@@ -4790,7 +5157,8 @@
             "Binary Indexed Tree"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1977,
@@ -4804,7 +5172,8 @@
             "Suffix Array"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 1955,
@@ -4817,7 +5186,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1948,
@@ -4833,7 +5203,8 @@
             "Hash Function"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 1938,
@@ -4849,7 +5220,8 @@
             "Trie"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 1931,
@@ -4861,7 +5233,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Dynamic Programming"
+        "tema_principal": "Dynamic Programming",
+        "has_image": true
     },
     {
         "id": 1932,
@@ -4877,7 +5250,8 @@
             "Binary Tree"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Hash Table"
+        "tema_principal": "Hash Table",
+        "has_image": true
     },
     {
         "id": 1923,
@@ -4893,7 +5267,8 @@
             "Hash Function"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1928,
@@ -4907,7 +5282,8 @@
             "Graph"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 1900,
@@ -4920,7 +5296,8 @@
             "Memoization"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Dynamic Programming"
+        "tema_principal": "Dynamic Programming",
+        "has_image": false
     },
     {
         "id": 1912,
@@ -4936,7 +5313,8 @@
             "Ordered Set"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1889,
@@ -4951,7 +5329,8 @@
             "Prefix Sum"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1883,
@@ -4964,7 +5343,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1896,
@@ -4979,7 +5359,8 @@
             "Stack"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": false
     },
     {
         "id": 1872,
@@ -4995,7 +5376,8 @@
             "Game Theory"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1866,
@@ -5009,7 +5391,8 @@
             "Combinatorics"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": false
     },
     {
         "id": 1879,
@@ -5024,7 +5407,8 @@
             "Bitmask"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1857,
@@ -5041,7 +5425,8 @@
             "Counting"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Hash Table"
+        "tema_principal": "Hash Table",
+        "has_image": true
     },
     {
         "id": 1851,
@@ -5057,7 +5442,8 @@
             "Heap (Priority Queue)"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1840,
@@ -5071,7 +5457,8 @@
             "Sorting"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 1835,
@@ -5085,7 +5472,8 @@
             "Bit Manipulation"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1847,
@@ -5100,7 +5488,8 @@
             "Ordered Set"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1825,
@@ -5116,7 +5505,8 @@
             "Ordered Set"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Design"
+        "tema_principal": "Design",
+        "has_image": false
     },
     {
         "id": 1819,
@@ -5131,7 +5521,8 @@
             "Number Theory"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 1830,
@@ -5145,7 +5536,8 @@
             "Combinatorics"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": false
     },
     {
         "id": 1808,
@@ -5159,7 +5551,8 @@
             "Number Theory"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": false
     },
     {
         "id": 1815,
@@ -5175,7 +5568,8 @@
             "Bitmask"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1793,
@@ -5191,7 +5585,8 @@
             "Monotonic Stack"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1787,
@@ -5205,7 +5600,8 @@
             "Bit Manipulation"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1803,
@@ -5219,7 +5615,8 @@
             "Trie"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1799,
@@ -5237,7 +5634,8 @@
             "Bitmask"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1776,
@@ -5253,7 +5651,8 @@
             "Monotonic Stack"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1771,
@@ -5266,7 +5665,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 1770,
@@ -5279,7 +5679,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1782,
@@ -5295,7 +5696,8 @@
             "Sorting"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 1761,
@@ -5307,7 +5709,8 @@
             "Graph"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Graph"
+        "tema_principal": "Graph",
+        "has_image": true
     },
     {
         "id": 1755,
@@ -5324,7 +5727,8 @@
             "Bitmask"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1766,
@@ -5340,7 +5744,8 @@
             "Number Theory"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 1745,
@@ -5353,7 +5758,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 1739,
@@ -5367,7 +5773,8 @@
             "Greedy"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": true
     },
     {
         "id": 1751,
@@ -5382,7 +5789,8 @@
             "Sorting"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 1735,
@@ -5398,7 +5806,8 @@
             "Number Theory"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1713,
@@ -5413,7 +5822,8 @@
             "Greedy"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1707,
@@ -5427,7 +5837,8 @@
             "Trie"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1723,
@@ -5443,7 +5854,8 @@
             "Bitmask"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1719,
@@ -5456,7 +5868,8 @@
             "Graph"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Tree"
+        "tema_principal": "Tree",
+        "has_image": true
     },
     {
         "id": 1697,
@@ -5472,7 +5885,8 @@
             "Sorting"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 1703,
@@ -5487,7 +5901,8 @@
             "Prefix Sum"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1681,
@@ -5502,7 +5917,8 @@
             "Bitmask"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1675,
@@ -5517,7 +5933,8 @@
             "Ordered Set"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1687,
@@ -5535,7 +5952,8 @@
             "Monotonic Queue"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1665,
@@ -5549,7 +5967,8 @@
             "Sorting"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1659,
@@ -5564,7 +5983,8 @@
             "Bitmask"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Dynamic Programming"
+        "tema_principal": "Dynamic Programming",
+        "has_image": true
     },
     {
         "id": 1649,
@@ -5582,7 +6002,8 @@
             "Ordered Set"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1671,
@@ -5597,7 +6018,8 @@
             "Greedy"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1655,
@@ -5613,7 +6035,8 @@
             "Bitmask"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1639,
@@ -5627,7 +6050,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1617,
@@ -5643,7 +6067,8 @@
             "Bitmask"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Dynamic Programming"
+        "tema_principal": "Dynamic Programming",
+        "has_image": true
     },
     {
         "id": 1610,
@@ -5659,7 +6084,8 @@
             "Sorting"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 1611,
@@ -5673,7 +6099,8 @@
             "Memoization"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Dynamic Programming"
+        "tema_principal": "Dynamic Programming",
+        "has_image": false
     },
     {
         "id": 1622,
@@ -5687,7 +6114,8 @@
             "Segment Tree"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": false
     },
     {
         "id": 1728,
@@ -5706,7 +6134,8 @@
             "Game Theory"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 1601,
@@ -5721,7 +6150,8 @@
             "Enumeration"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 1595,
@@ -5737,7 +6167,8 @@
             "Bitmask"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 1606,
@@ -5752,7 +6183,8 @@
             "Ordered Set"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 1585,
@@ -5766,7 +6198,8 @@
             "Sorting"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 1579,
@@ -5779,7 +6212,8 @@
             "Graph"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Union Find"
+        "tema_principal": "Union Find",
+        "has_image": true
     },
     {
         "id": 1591,
@@ -5794,7 +6228,8 @@
             "Matrix"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 1569,
@@ -5815,7 +6250,8 @@
             "Binary Tree"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 1568,
@@ -5831,7 +6267,8 @@
             "Strongly Connected Component"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 1563,
@@ -5846,7 +6283,8 @@
             "Game Theory"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1575,
@@ -5860,7 +6298,8 @@
             "Memoization"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1553,
@@ -5873,7 +6312,8 @@
             "Memoization"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Dynamic Programming"
+        "tema_principal": "Dynamic Programming",
+        "has_image": false
     },
     {
         "id": 1547,
@@ -5887,7 +6327,8 @@
             "Sorting"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 1542,
@@ -5901,7 +6342,8 @@
             "Bit Manipulation"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Hash Table"
+        "tema_principal": "Hash Table",
+        "has_image": false
     },
     {
         "id": 1537,
@@ -5916,7 +6358,8 @@
             "Greedy"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 1521,
@@ -5931,7 +6374,8 @@
             "Segment Tree"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 1520,
@@ -5944,7 +6388,8 @@
             "Greedy"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 1515,
@@ -5959,7 +6404,8 @@
             "Randomized"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 1531,
@@ -5972,7 +6418,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 1526,
@@ -5988,7 +6435,8 @@
             "Monotonic Stack"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1505,
@@ -6003,7 +6451,8 @@
             "Segment Tree"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": true
     },
     {
         "id": 1499,
@@ -6019,7 +6468,8 @@
             "Monotonic Queue"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1510,
@@ -6033,7 +6483,8 @@
             "Game Theory"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": false
     },
     {
         "id": 1489,
@@ -6049,7 +6500,8 @@
             "Strongly Connected Component"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Union Find"
+        "tema_principal": "Union Find",
+        "has_image": true
     },
     {
         "id": 1494,
@@ -6064,7 +6516,8 @@
             "Bitmask"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Dynamic Programming"
+        "tema_principal": "Dynamic Programming",
+        "has_image": true
     },
     {
         "id": 1473,
@@ -6077,7 +6530,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1467,
@@ -6094,7 +6548,8 @@
             "Probability and Statistics"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1478,
@@ -6109,7 +6564,8 @@
             "Sorting"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 1458,
@@ -6122,7 +6578,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1453,
@@ -6136,7 +6593,8 @@
             "Geometry"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 1463,
@@ -6150,7 +6608,8 @@
             "Matrix"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 1444,
@@ -6166,7 +6625,8 @@
             "Prefix Sum"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 1439,
@@ -6181,7 +6641,8 @@
             "Matrix"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1449,
@@ -6194,7 +6655,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1420,
@@ -6207,7 +6669,8 @@
             "Prefix Sum"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Dynamic Programming"
+        "tema_principal": "Dynamic Programming",
+        "has_image": true
     },
     {
         "id": 1434,
@@ -6222,7 +6685,8 @@
             "Bitmask"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1411,
@@ -6234,7 +6698,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Dynamic Programming"
+        "tema_principal": "Dynamic Programming",
+        "has_image": true
     },
     {
         "id": 1406,
@@ -6249,7 +6714,8 @@
             "Game Theory"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1416,
@@ -6262,7 +6728,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 1397,
@@ -6276,7 +6743,8 @@
             "String Matching"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 1392,
@@ -6291,7 +6759,8 @@
             "Hash Function"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 1402,
@@ -6306,7 +6775,8 @@
             "Sorting"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1383,
@@ -6321,7 +6791,8 @@
             "Heap (Priority Queue)"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1377,
@@ -6336,7 +6807,8 @@
             "Graph"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Tree"
+        "tema_principal": "Tree",
+        "has_image": true
     },
     {
         "id": 1388,
@@ -6351,7 +6823,8 @@
             "Heap (Priority Queue)"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 1368,
@@ -6368,7 +6841,8 @@
             "Shortest Path"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 1354,
@@ -6381,7 +6855,8 @@
             "Heap (Priority Queue)"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1373,
@@ -6397,7 +6872,8 @@
             "Binary Tree"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Dynamic Programming"
+        "tema_principal": "Dynamic Programming",
+        "has_image": true
     },
     {
         "id": 1349,
@@ -6413,7 +6889,8 @@
             "Bitmask"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 1340,
@@ -6427,7 +6904,8 @@
             "Sorting"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 1359,
@@ -6441,7 +6919,8 @@
             "Combinatorics"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": false
     },
     {
         "id": 1335,
@@ -6454,7 +6933,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 1326,
@@ -6468,7 +6948,8 @@
             "Greedy"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 1345,
@@ -6482,7 +6963,8 @@
             "Breadth-First Search"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1320,
@@ -6495,7 +6977,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": true
     },
     {
         "id": 1312,
@@ -6508,7 +6991,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 2227,
@@ -6524,7 +7008,8 @@
             "Trie"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1307,
@@ -6539,7 +7024,8 @@
             "Backtracking"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1298,
@@ -6553,7 +7039,8 @@
             "Graph"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1293,
@@ -6567,7 +7054,8 @@
             "Matrix"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 1284,
@@ -6583,7 +7071,8 @@
             "Matrix"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 1278,
@@ -6596,7 +7085,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 1269,
@@ -6608,7 +7098,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Dynamic Programming"
+        "tema_principal": "Dynamic Programming",
+        "has_image": false
     },
     {
         "id": 2218,
@@ -6622,7 +7113,8 @@
             "Prefix Sum"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 1263,
@@ -6637,7 +7129,8 @@
             "Matrix"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 1255,
@@ -6654,7 +7147,8 @@
             "Bitmask"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 2312,
@@ -6668,7 +7162,8 @@
             "Memoization"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 1250,
@@ -6682,7 +7177,8 @@
             "Number Theory"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1691,
@@ -6696,7 +7192,8 @@
             "Sorting"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 1240,
@@ -6708,7 +7205,8 @@
             "Backtracking"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Backtracking"
+        "tema_principal": "Backtracking",
+        "has_image": true
     },
     {
         "id": 2193,
@@ -6723,7 +7221,8 @@
             "Binary Indexed Tree"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Two Pointers"
+        "tema_principal": "Two Pointers",
+        "has_image": false
     },
     {
         "id": 1235,
@@ -6738,7 +7237,8 @@
             "Sorting"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 2321,
@@ -6751,7 +7251,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1224,
@@ -6764,7 +7265,8 @@
             "Hash Table"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1223,
@@ -6777,7 +7279,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1206,
@@ -6790,7 +7293,8 @@
             "Design"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Linked List"
+        "tema_principal": "Linked List",
+        "has_image": true
     },
     {
         "id": 1960,
@@ -6804,7 +7308,8 @@
             "Hash Function"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 1220,
@@ -6816,7 +7321,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Dynamic Programming"
+        "tema_principal": "Dynamic Programming",
+        "has_image": false
     },
     {
         "id": 1862,
@@ -6831,7 +7337,8 @@
             "Prefix Sum"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1210,
@@ -6845,7 +7352,8 @@
             "Matrix"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 1916,
@@ -6862,7 +7370,8 @@
             "Combinatorics"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": true
     },
     {
         "id": 1203,
@@ -6877,7 +7386,8 @@
             "Topological Sort"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Depth-First Search"
+        "tema_principal": "Depth-First Search",
+        "has_image": true
     },
     {
         "id": 1944,
@@ -6891,7 +7401,8 @@
             "Monotonic Stack"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 1192,
@@ -6905,7 +7416,8 @@
             "Biconnected Component"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Depth-First Search"
+        "tema_principal": "Depth-First Search",
+        "has_image": true
     },
     {
         "id": 1483,
@@ -6922,7 +7434,8 @@
             "Design"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Binary Search"
+        "tema_principal": "Binary Search",
+        "has_image": true
     },
     {
         "id": 1187,
@@ -6937,7 +7450,8 @@
             "Sorting"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1425,
@@ -6954,7 +7468,8 @@
             "Monotonic Queue"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1178,
@@ -6970,7 +7485,8 @@
             "Trie"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1363,
@@ -6986,7 +7502,8 @@
             "Sorting"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1172,
@@ -7001,7 +7518,8 @@
             "Heap (Priority Queue)"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Hash Table"
+        "tema_principal": "Hash Table",
+        "has_image": false
     },
     {
         "id": 1157,
@@ -7017,7 +7535,8 @@
             "Segment Tree"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1632,
@@ -7034,7 +7553,8 @@
             "Matrix"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 1330,
@@ -7048,7 +7568,8 @@
             "Greedy"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1147,
@@ -7065,7 +7586,8 @@
             "Hash Function"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Two Pointers"
+        "tema_principal": "Two Pointers",
+        "has_image": false
     },
     {
         "id": 1316,
@@ -7080,7 +7602,8 @@
             "Hash Function"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 1301,
@@ -7094,7 +7617,8 @@
             "Matrix"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1289,
@@ -7108,7 +7632,8 @@
             "Matrix"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 1627,
@@ -7123,7 +7648,8 @@
             "Number Theory"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 1125,
@@ -7138,7 +7664,8 @@
             "Bitmask"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1106,
@@ -7152,7 +7679,8 @@
             "Recursion"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 1096,
@@ -7167,7 +7695,8 @@
             "Breadth-First Search"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 1095,
@@ -7181,7 +7710,8 @@
             "Interactive"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1092,
@@ -7194,7 +7724,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 1074,
@@ -7209,7 +7740,8 @@
             "Prefix Sum"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 1163,
@@ -7222,7 +7754,8 @@
             "String"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Two Pointers"
+        "tema_principal": "Two Pointers",
+        "has_image": false
     },
     {
         "id": 1044,
@@ -7239,7 +7772,8 @@
             "Hash Function"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 1036,
@@ -7254,7 +7788,8 @@
             "Breadth-First Search"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1032,
@@ -7270,7 +7805,8 @@
             "Data Stream"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1028,
@@ -7285,7 +7821,8 @@
             "Binary Tree"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": true
     },
     {
         "id": 1012,
@@ -7298,7 +7835,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": false
     },
     {
         "id": 1001,
@@ -7311,7 +7849,8 @@
             "Hash Table"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 1000,
@@ -7325,7 +7864,8 @@
             "Prefix Sum"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 996,
@@ -7343,7 +7883,8 @@
             "Bitmask"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 995,
@@ -7359,7 +7900,8 @@
             "Prefix Sum"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 992,
@@ -7374,7 +7916,8 @@
             "Counting"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 987,
@@ -7391,7 +7934,8 @@
             "Binary Tree"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Hash Table"
+        "tema_principal": "Hash Table",
+        "has_image": true
     },
     {
         "id": 982,
@@ -7405,7 +7949,8 @@
             "Bit Manipulation"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 980,
@@ -7420,7 +7965,8 @@
             "Matrix"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 975,
@@ -7436,7 +7982,8 @@
             "Ordered Set"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 972,
@@ -7449,7 +7996,8 @@
             "String"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": false
     },
     {
         "id": 968,
@@ -7464,7 +8012,8 @@
             "Binary Tree"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Dynamic Programming"
+        "tema_principal": "Dynamic Programming",
+        "has_image": true
     },
     {
         "id": 964,
@@ -7478,7 +8027,8 @@
             "Memoization"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": false
     },
     {
         "id": 960,
@@ -7492,7 +8042,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 956,
@@ -7505,7 +8056,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 952,
@@ -7521,7 +8073,8 @@
             "Number Theory"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 943,
@@ -7537,7 +8090,8 @@
             "Bitmask"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 940,
@@ -7550,7 +8104,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 936,
@@ -7565,7 +8120,8 @@
             "Queue"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 928,
@@ -7582,7 +8138,8 @@
             "Graph"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 927,
@@ -7595,7 +8152,8 @@
             "Math"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 924,
@@ -7612,7 +8170,8 @@
             "Graph"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 920,
@@ -7626,7 +8185,8 @@
             "Combinatorics"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": false
     },
     {
         "id": 913,
@@ -7643,7 +8203,8 @@
             "Game Theory"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": true
     },
     {
         "id": 906,
@@ -7657,7 +8218,8 @@
             "Enumeration"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": false
     },
     {
         "id": 903,
@@ -7671,7 +8233,8 @@
             "Prefix Sum"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 902,
@@ -7687,7 +8250,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 899,
@@ -7701,7 +8265,8 @@
             "Sorting"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": false
     },
     {
         "id": 895,
@@ -7716,7 +8281,8 @@
             "Ordered Set"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Hash Table"
+        "tema_principal": "Hash Table",
+        "has_image": false
     },
     {
         "id": 891,
@@ -7730,7 +8296,8 @@
             "Sorting"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 887,
@@ -7744,7 +8311,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": false
     },
     {
         "id": 882,
@@ -7758,7 +8326,8 @@
             "Shortest Path"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Graph"
+        "tema_principal": "Graph",
+        "has_image": true
     },
     {
         "id": 879,
@@ -7771,7 +8340,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 878,
@@ -7784,7 +8354,8 @@
             "Binary Search"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": false
     },
     {
         "id": 871,
@@ -7799,7 +8370,8 @@
             "Heap (Priority Queue)"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 864,
@@ -7814,7 +8386,8 @@
             "Matrix"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 710,
@@ -7831,7 +8404,8 @@
             "Randomized"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 862,
@@ -7849,7 +8423,8 @@
             "Monotonic Queue"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 857,
@@ -7864,7 +8439,8 @@
             "Heap (Priority Queue)"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 854,
@@ -7877,7 +8453,8 @@
             "Breadth-First Search"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 850,
@@ -7892,7 +8469,8 @@
             "Ordered Set"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 847,
@@ -7908,7 +8486,8 @@
             "Bitmask"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Dynamic Programming"
+        "tema_principal": "Dynamic Programming",
+        "has_image": true
     },
     {
         "id": 843,
@@ -7924,7 +8503,8 @@
             "Game Theory"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 839,
@@ -7941,7 +8521,8 @@
             "Union Find"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 834,
@@ -7956,7 +8537,8 @@
             "Graph"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Dynamic Programming"
+        "tema_principal": "Dynamic Programming",
+        "has_image": true
     },
     {
         "id": 829,
@@ -7969,7 +8551,8 @@
             "Enumeration"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": false
     },
     {
         "id": 828,
@@ -7983,7 +8566,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Hash Table"
+        "tema_principal": "Hash Table",
+        "has_image": false
     },
     {
         "id": 827,
@@ -7999,7 +8583,8 @@
             "Matrix"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 818,
@@ -8011,7 +8596,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Dynamic Programming"
+        "tema_principal": "Dynamic Programming",
+        "has_image": false
     },
     {
         "id": 815,
@@ -8025,7 +8611,8 @@
             "Breadth-First Search"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 810,
@@ -8041,7 +8628,8 @@
             "Game Theory"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 805,
@@ -8057,7 +8645,8 @@
             "Bitmask"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 803,
@@ -8071,7 +8660,8 @@
             "Matrix"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 801,
@@ -8084,7 +8674,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 798,
@@ -8097,7 +8688,8 @@
             "Prefix Sum"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 793,
@@ -8110,7 +8702,8 @@
             "Binary Search"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": false
     },
     {
         "id": 782,
@@ -8125,7 +8718,8 @@
             "Matrix"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 780,
@@ -8137,7 +8731,8 @@
             "Math"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": false
     },
     {
         "id": 778,
@@ -8155,7 +8750,8 @@
             "Matrix"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 773,
@@ -8172,7 +8768,8 @@
             "Matrix"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 770,
@@ -8188,7 +8785,8 @@
             "Recursion"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Hash Table"
+        "tema_principal": "Hash Table",
+        "has_image": false
     },
     {
         "id": 768,
@@ -8204,7 +8802,8 @@
             "Monotonic Stack"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 765,
@@ -8220,7 +8819,8 @@
             "Graph"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Greedy"
+        "tema_principal": "Greedy",
+        "has_image": false
     },
     {
         "id": 761,
@@ -8233,7 +8833,8 @@
             "Recursion"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 757,
@@ -8247,7 +8848,8 @@
             "Sorting"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 753,
@@ -8261,7 +8863,8 @@
             "Eulerian Circuit"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Depth-First Search"
+        "tema_principal": "Depth-First Search",
+        "has_image": false
     },
     {
         "id": 749,
@@ -8277,7 +8880,8 @@
             "Simulation"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 745,
@@ -8293,7 +8897,8 @@
             "Trie"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 741,
@@ -8307,7 +8912,8 @@
             "Matrix"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 736,
@@ -8322,7 +8928,8 @@
             "Recursion"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Hash Table"
+        "tema_principal": "Hash Table",
+        "has_image": false
     },
     {
         "id": 732,
@@ -8338,7 +8945,8 @@
             "Ordered Set"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Binary Search"
+        "tema_principal": "Binary Search",
+        "has_image": false
     },
     {
         "id": 730,
@@ -8351,7 +8959,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 726,
@@ -8366,7 +8975,8 @@
             "Sorting"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Hash Table"
+        "tema_principal": "Hash Table",
+        "has_image": false
     },
     {
         "id": 719,
@@ -8381,7 +8991,8 @@
             "Sorting"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 715,
@@ -8395,7 +9006,8 @@
             "Ordered Set"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Design"
+        "tema_principal": "Design",
+        "has_image": false
     },
     {
         "id": 699,
@@ -8409,7 +9021,8 @@
             "Ordered Set"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 691,
@@ -8428,14 +9041,15 @@
             "Bitmask"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 689,
         "slug": "maximum-sum-of-3-non-overlapping-subarrays",
         "url": "https://leetcode.com/problems/maximum-sum-of-3-non-overlapping-subarrays/",
         "titulo": "Maximum Sum of 3 Non-Overlapping Subarrays",
-        "enunciado": "Given an integer array \nnums\n and an integer \nk\n, find three non-overlapping subarrays of length \nk\n with maximum sum and return them.\n\n\nReturn the result as a list of indices representing the starting position of each interval (\n0-indexed\n). If there are multiple answers, return the lexicographically smallest one.\n\n\n \n\n\nExample 1:\n\n\n\n\nInput:\n nums = [1,2,1,2,6,7,5,1], k = 2\n\nOutput:\n [0,3,5]\n\nExplanation:\n Subarrays [1, 2], [2, 6], [7, 5] correspond to the starting indices [0, 3, 5].\nWe could have also taken [2, 1], but an answer of [1, 3, 5] would be lexicographically smaller.\n\n\n\nExample 2:\n\n\n\n\nInput:\n nums = [1,2,1,2,1,2,1,2,1], k = 2\n\nOutput:\n [0,2,4]\n\n\n\n \n\n\nConstraints:\n\n\n\n\n1 <= nums.length <= 2 * 10\n4\n\n\n1 <= nums[i] < 2\n16\n\n\n1 <= k <= floor(nums.length / 3)",
+        "enunciado": "Given an integer array \nnums\n and an integer \nk\n, find three non-overlapping subarrays of length \nk\n with maximum sum and return them.\n\n\nReturn the result as a list of indices representing the starting position of each interval (\n0-indexed\n). If there are multiple answers, return the lexicographically smallest one.\n\n\n \n\n\nExample 1:\n\n\n\n\nInput:\n nums = [1,2,1,2,6,7,5,1], k = 2\n\nOutput:\n [0,3,5]\n\nExplanation:\n Subarrays [1, 2], [2, 6], [7, 5] correspond to the starting indices [0, 3, 5].\nWe could have also taken [2, 1], but an answer of [1, 3, 5] would be lexicographically larger.\n\n\n\nExample 2:\n\n\n\n\nInput:\n nums = [1,2,1,2,1,2,1,2,1], k = 2\n\nOutput:\n [0,2,4]\n\n\n\n \n\n\nConstraints:\n\n\n\n\n1 <= nums.length <= 2 * 10\n4\n\n\n1 <= nums[i] < 2\n16\n\n\n1 <= k <= floor(nums.length / 3)",
         "temas": [
             "Array",
             "Dynamic Programming",
@@ -8443,7 +9057,8 @@
             "Prefix Sum"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 685,
@@ -8458,7 +9073,8 @@
             "Graph"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Depth-First Search"
+        "tema_principal": "Depth-First Search",
+        "has_image": true
     },
     {
         "id": 679,
@@ -8472,7 +9088,8 @@
             "Backtracking"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 675,
@@ -8487,7 +9104,8 @@
             "Matrix"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 668,
@@ -8500,7 +9118,8 @@
             "Binary Search"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": true
     },
     {
         "id": 664,
@@ -8513,7 +9132,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 639,
@@ -8526,7 +9146,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 632,
@@ -8543,7 +9164,8 @@
             "Heap (Priority Queue)"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 630,
@@ -8558,7 +9180,8 @@
             "Heap (Priority Queue)"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 629,
@@ -8570,7 +9193,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Dynamic Programming"
+        "tema_principal": "Dynamic Programming",
+        "has_image": false
     },
     {
         "id": 600,
@@ -8582,7 +9206,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Dynamic Programming"
+        "tema_principal": "Dynamic Programming",
+        "has_image": false
     },
     {
         "id": 591,
@@ -8595,7 +9220,8 @@
             "Stack"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 587,
@@ -8609,7 +9235,8 @@
             "Geometry"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 564,
@@ -8622,7 +9249,8 @@
             "String"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": false
     },
     {
         "id": 552,
@@ -8634,7 +9262,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Dynamic Programming"
+        "tema_principal": "Dynamic Programming",
+        "has_image": false
     },
     {
         "id": 546,
@@ -8648,7 +9277,8 @@
             "Memoization"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 517,
@@ -8661,7 +9291,8 @@
             "Greedy"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 514,
@@ -8676,7 +9307,8 @@
             "Breadth-First Search"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": true
     },
     {
         "id": 502,
@@ -8691,7 +9323,8 @@
             "Heap (Priority Queue)"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 493,
@@ -8709,7 +9342,8 @@
             "Ordered Set"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 1643,
@@ -8724,7 +9358,8 @@
             "Combinatorics"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 488,
@@ -8740,7 +9375,8 @@
             "Memoization"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 483,
@@ -8753,7 +9389,8 @@
             "Binary Search"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": false
     },
     {
         "id": 480,
@@ -8768,7 +9405,8 @@
             "Heap (Priority Queue)"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 479,
@@ -8781,7 +9419,8 @@
             "Enumeration"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": false
     },
     {
         "id": 472,
@@ -8797,7 +9436,8 @@
             "Trie"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 466,
@@ -8810,7 +9450,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 460,
@@ -8825,7 +9466,8 @@
             "Doubly-Linked List"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Hash Table"
+        "tema_principal": "Hash Table",
+        "has_image": false
     },
     {
         "id": 458,
@@ -8839,7 +9481,8 @@
             "Combinatorics"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": false
     },
     {
         "id": 446,
@@ -8852,7 +9495,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 440,
@@ -8864,7 +9508,8 @@
             "Trie"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Trie"
+        "tema_principal": "Trie",
+        "has_image": false
     },
     {
         "id": 432,
@@ -8879,7 +9524,8 @@
             "Doubly-Linked List"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Hash Table"
+        "tema_principal": "Hash Table",
+        "has_image": false
     },
     {
         "id": 420,
@@ -8893,7 +9539,8 @@
             "Heap (Priority Queue)"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 410,
@@ -8909,7 +9556,8 @@
             "Prefix Sum"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 407,
@@ -8924,7 +9572,8 @@
             "Matrix"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 403,
@@ -8937,7 +9586,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 391,
@@ -8950,7 +9600,8 @@
             "Line Sweep"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 381,
@@ -8966,7 +9617,8 @@
             "Randomized"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 363,
@@ -8982,7 +9634,8 @@
             "Ordered Set"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 354,
@@ -8997,7 +9650,8 @@
             "Sorting"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 352,
@@ -9011,7 +9665,8 @@
             "Ordered Set"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Binary Search"
+        "tema_principal": "Binary Search",
+        "has_image": false
     },
     {
         "id": 336,
@@ -9026,7 +9681,8 @@
             "Trie"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 335,
@@ -9040,7 +9696,8 @@
             "Geometry"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 332,
@@ -9054,7 +9711,8 @@
             "Eulerian Circuit"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Depth-First Search"
+        "tema_principal": "Depth-First Search",
+        "has_image": true
     },
     {
         "id": 330,
@@ -9067,7 +9725,8 @@
             "Greedy"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 329,
@@ -9086,7 +9745,8 @@
             "Matrix"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 327,
@@ -9104,7 +9764,8 @@
             "Ordered Set"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 321,
@@ -9120,7 +9781,8 @@
             "Monotonic Stack"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 315,
@@ -9138,7 +9800,8 @@
             "Ordered Set"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 312,
@@ -9151,7 +9814,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 301,
@@ -9165,7 +9829,8 @@
             "Breadth-First Search"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 297,
@@ -9182,7 +9847,8 @@
             "Binary Tree"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": true
     },
     {
         "id": 295,
@@ -9198,7 +9864,8 @@
             "Data Stream"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Two Pointers"
+        "tema_principal": "Two Pointers",
+        "has_image": false
     },
     {
         "id": 282,
@@ -9212,7 +9879,8 @@
             "Backtracking"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": false
     },
     {
         "id": 273,
@@ -9226,7 +9894,8 @@
             "Recursion"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": false
     },
     {
         "id": 239,
@@ -9242,7 +9911,8 @@
             "Monotonic Queue"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 233,
@@ -9256,7 +9926,8 @@
             "Recursion"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": false
     },
     {
         "id": 224,
@@ -9271,7 +9942,8 @@
             "Recursion"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": false
     },
     {
         "id": 220,
@@ -9287,7 +9959,8 @@
             "Ordered Set"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 218,
@@ -9305,7 +9978,8 @@
             "Ordered Set"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 214,
@@ -9320,7 +9994,8 @@
             "Hash Function"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 212,
@@ -9336,7 +10011,8 @@
             "Matrix"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 188,
@@ -9349,7 +10025,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 174,
@@ -9363,7 +10040,8 @@
             "Matrix"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 154,
@@ -9376,7 +10054,8 @@
             "Binary Search"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 149,
@@ -9391,7 +10070,8 @@
             "Geometry"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 140,
@@ -9409,7 +10089,8 @@
             "Memoization"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 135,
@@ -9422,7 +10103,8 @@
             "Greedy"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 132,
@@ -9435,7 +10117,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 127,
@@ -9449,7 +10132,8 @@
             "Breadth-First Search"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Hash Table"
+        "tema_principal": "Hash Table",
+        "has_image": false
     },
     {
         "id": 126,
@@ -9464,7 +10148,8 @@
             "Breadth-First Search"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Hash Table"
+        "tema_principal": "Hash Table",
+        "has_image": false
     },
     {
         "id": 124,
@@ -9479,7 +10164,8 @@
             "Binary Tree"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Dynamic Programming"
+        "tema_principal": "Dynamic Programming",
+        "has_image": true
     },
     {
         "id": 123,
@@ -9492,7 +10178,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 115,
@@ -9505,7 +10192,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 87,
@@ -9518,7 +10206,8 @@
             "Dynamic Programming"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 85,
@@ -9534,7 +10223,8 @@
             "Monotonic Stack"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 84,
@@ -9548,7 +10238,8 @@
             "Monotonic Stack"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 76,
@@ -9562,7 +10253,8 @@
             "Sliding Window"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Hash Table"
+        "tema_principal": "Hash Table",
+        "has_image": false
     },
     {
         "id": 68,
@@ -9576,7 +10268,8 @@
             "Simulation"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 65,
@@ -9588,7 +10281,8 @@
             "String"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 60,
@@ -9601,7 +10295,8 @@
             "Recursion"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Math"
+        "tema_principal": "Math",
+        "has_image": false
     },
     {
         "id": 52,
@@ -9613,7 +10308,8 @@
             "Backtracking"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Backtracking"
+        "tema_principal": "Backtracking",
+        "has_image": true
     },
     {
         "id": 51,
@@ -9626,7 +10322,8 @@
             "Backtracking"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 44,
@@ -9641,7 +10338,8 @@
             "Recursion"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 42,
@@ -9657,7 +10355,8 @@
             "Monotonic Stack"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 41,
@@ -9670,7 +10369,8 @@
             "Hash Table"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     },
     {
         "id": 37,
@@ -9685,7 +10385,8 @@
             "Matrix"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": true
     },
     {
         "id": 32,
@@ -9699,7 +10400,8 @@
             "Stack"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 30,
@@ -9713,7 +10415,8 @@
             "Sliding Window"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Hash Table"
+        "tema_principal": "Hash Table",
+        "has_image": false
     },
     {
         "id": 25,
@@ -9726,7 +10429,8 @@
             "Recursion"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Linked List"
+        "tema_principal": "Linked List",
+        "has_image": true
     },
     {
         "id": 23,
@@ -9741,7 +10445,8 @@
             "Merge Sort"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Linked List"
+        "tema_principal": "Linked List",
+        "has_image": false
     },
     {
         "id": 10,
@@ -9755,7 +10460,8 @@
             "Recursion"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "String"
+        "tema_principal": "String",
+        "has_image": false
     },
     {
         "id": 4,
@@ -9769,6 +10475,7 @@
             "Divide and Conquer"
         ],
         "dificuldade": "Difícil",
-        "tema_principal": "Array"
+        "tema_principal": "Array",
+        "has_image": false
     }
 ]

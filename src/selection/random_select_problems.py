@@ -8,7 +8,7 @@ seed = 2025
 np.random.seed(seed)
 
 # Abre o arquivo JSON com todas as questões públicas
-with open("datasets/leetcode/public_problems.json", "r", encoding="utf-8") as f:
+with open("datasets/leetcode/public_problems_without_images.json", "r", encoding="utf-8") as f:
     data = json.load(f)
 
 df = pd.DataFrame(data)

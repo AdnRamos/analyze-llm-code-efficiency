@@ -1,6 +1,7 @@
 import requests, json, time
 from collections import defaultdict
 from bs4 import BeautifulSoup
+import os
 
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
@@ -16,11 +17,14 @@ print(f"Total de problemas encontrados (incluindo premium): {len(problems)}")
 
 easy_questions, medium_questions, hard_questions = [], [], []
 all_public_questions = []
+questions_with_images = []
+questions_without_images = []
 errors = []
 count_easy = count_medium = count_hard = 0
 count_easy_premium = count_medium_premium = count_hard_premium = 0
 count_public = count_premium = 0
 count_erro = 0
+count_with_image = count_without_image = 0
 
 tema_dificuldade = defaultdict(lambda: {"Fácil": 0, "Média": 0, "Difícil": 0, "total": 0, "ids": []})
 
@@ -84,7 +88,10 @@ query questionData($titleSlug: String!) {
     content_text = soup.get_text("\n").strip()
     tema_principal = tags[0] if tags else ""
 
-    print(f"{q_number} - {q_title} [{difficulty_text}] | Temas: {', '.join(tags) or 'Nenhum'} | Tema principal: {tema_principal}")
+    # Detecta imagens
+    has_image = bool(soup.find_all("img"))
+
+    print(f"{q_number} - {q_title} [{difficulty_text}] | Temas: {', '.join(tags) or 'Nenhum'} | Tema principal: {tema_principal} | Imagem: {'SIM' if has_image else 'NÃO'}")
 
     question_entry = {
         "id": q_number,
@@ -95,6 +102,7 @@ query questionData($titleSlug: String!) {
         "temas": tags,
         "dificuldade": difficulty_text,
         "tema_principal": tema_principal,
+        "has_image": has_image
     }
     if difficulty_level == 1:
         easy_questions.append(question_entry); count_easy += 1
@@ -105,6 +113,14 @@ query questionData($titleSlug: String!) {
 
     # Salva na lista geral de públicas
     all_public_questions.append(question_entry)
+
+    # Salva em listas separadas com/sem imagem
+    if has_image:
+        questions_with_images.append(question_entry)
+        count_with_image += 1
+    else:
+        questions_without_images.append(question_entry)
+        count_without_image += 1
 
     # Lógica de contagem por tema
     for tema in tags:
@@ -130,27 +146,43 @@ report = {
     "total_publicas_coletadas": total_public,
     "total_premium": total_premium,
     "questoes_com_erro": count_erro,
+    "total_com_imagem": count_with_image,
+    "total_sem_imagem": count_without_image,
     "porcentagem_publica": round(100 * count_public / len(problems), 2),
     "porcentagem_premium": round(100 * count_premium / len(problems), 2),
+    "porcentagem_com_imagem": round(100 * count_with_image / total_public, 2) if total_public else 0,
+    "porcentagem_sem_imagem": round(100 * count_without_image / total_public, 2) if total_public else 0,
     "erros": errors,
     "temas": {k: dict(v) for k, v in tema_dificuldade.items()},
 }
 
+os.makedirs("datasets/leetcode", exist_ok=True)
 # Salva relatórios json como antes
-with open("datasets\leetcode\easy.json", "w", encoding="utf-8") as fe:
+with open("datasets/leetcode/easy.json", "w", encoding="utf-8") as fe:
     json.dump(easy_questions, fe, ensure_ascii=False, indent=4)
-with open("datasets\leetcode\medium.json", "w", encoding="utf-8") as fm:
+with open("datasets/leetcode/medium.json", "w", encoding="utf-8") as fm:
     json.dump(medium_questions, fm, ensure_ascii=False, indent=4)
-with open("datasets\leetcode\hard.json", "w", encoding="utf-8") as fh:
+with open("datasets/leetcode/hard.json", "w", encoding="utf-8") as fh:
     json.dump(hard_questions, fh, ensure_ascii=False, indent=4)
-with open("datasets\leetcode\report.json", "w", encoding="utf-8") as fr:
+with open("datasets/leetcode/report.json", "w", encoding="utf-8") as fr:
     json.dump(report, fr, ensure_ascii=False, indent=4)
 
 # Novo: salva todas as públicas (com tema principal) em JSON
-with open("datasets\leetcode\questoes_publicas.json", "w", encoding="utf-8") as f:
+with open("datasets/leetcode/public_problems.json", "w", encoding="utf-8") as f:
     json.dump(all_public_questions, f, ensure_ascii=False, indent=2)
+
+# Salva as listas de questões com e sem imagem
+with open("datasets/leetcode/public_problems_with_images.json", "w", encoding="utf-8") as f_img:
+    json.dump(questions_with_images, f_img, ensure_ascii=False, indent=2)
+with open("datasets/leetcode/public_problems_without_images.json", "w", encoding="utf-8") as f_noimg:
+    json.dump(questions_without_images, f_noimg, ensure_ascii=False, indent=2)
 
 print("\n===== RELATÓRIO TEMAS =====")
 for tema, stats in tema_dificuldade.items():
     print(f"{tema}: Total={stats['total']} | Fácil={stats['Fácil']}, Média={stats['Média']}, Difícil={stats['Difícil']}")
 
+print(f"\n===== RESUMO QUESTÕES COM E SEM IMAGEM =====")
+print(f"Total com imagem: {count_with_image}")
+print(f"Total sem imagem: {count_without_image}")
+print(f"Porcentagem com imagem: {report['porcentagem_com_imagem']}%")
+print(f"Porcentagem sem imagem: {report['porcentagem_sem_imagem']}%")
