@@ -31,6 +31,7 @@ import json
 import time
 import unicodedata
 from typing import Optional, Tuple, Dict, List
+from urllib.parse import urljoin
 
 import requests
 from bs4 import BeautifulSoup
@@ -72,17 +73,102 @@ MAX_POLL_TIME     = float(os.getenv("LC_MAX_POLL_TIME",     80))  # seg totais n
 RETRY_TOTAL       = int(os.getenv("LC_RETRY_TOTAL",         5))
 RETRY_BACKOFF     = float(os.getenv("LC_RETRY_BACKOFF",     1.0))
 
-# >>> ATUALIZE SEUS COOKIES <<<
-COOKIES = {
-    "LEETCODE_SESSION": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfYXV0aF91c2VyX2lkIjoiMTc2OTQyNzQiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaGFzaCI6ImJmNTJmZTgzNzNjNjcxYTJhMWEyZmNhNWNiMzYyOWZiNTI3MjU0YTY3ZGJkZWFkNTczMWE0N2Y4ZGQ1MDZmNTgiLCJzZXNzaW9uX3V1aWQiOiJiMTNlMjRkNSIsImlkIjoxNzY5NDI3NCwiZW1haWwiOiJhZGVuaWxzb24ucmFtb3NAdWZhcGUuZWR1LmJyIiwidXNlcm5hbWUiOiJBZGVuaWxzb25SYW1vcyIsInVzZXJfc2x1ZyI6IkFkZW5pbHNvblJhbW9zIiwiYXZhdGFyIjoiaHR0cHM6Ly9hc3NldHMubGVldGNvZGUuY29tL3VzZXJzL0FkZW5pbHNvblJhbW9zL2F2YXRhcl8xNzQ3MzEzNDc1LnBuZyIsInJlZnJlc2hlZF9hdCI6MTc1ODIwNjIzNiwiaXAiOiIyODA0OjE4OjU4MzY6MWY0NzplNDdkOjZhYzA6ZWIxMzpkNTNiIiwiaWRlbnRpdHkiOiJhM2Y1N2JiZTIxYzRlMzAzNzkyMjhhZDc3ODhmMjI0ZCIsImRldmljZV93aXRoX2lwIjpbImIxN2FlNzJjNzM2ZGE2NjkzZTUzNTc2MzhlNTAxODFlIiwiMjgwNDoxODo1ODM2OjFmNDc6ZTQ3ZDo2YWMwOmViMTM6ZDUzYiJdLCJfc2Vzc2lvbl9leHBpcnkiOjEyMDk2MDB9.1qKcPVtMceBBMejb5m_cAja7L5ZzSiFWRjbOdFttu9E",  # substitua
-    "csrftoken": "sOuxMozWTNNz2S66vgexCBCgxUMPOLYCUmzion3KREQvIZMODGBSclZWOii3runT"          # substitua
-}
+# >>> AUTENTICAÇÃO <<<
+# Você pode fornecer cookies manualmente (compatibilidade com versão anterior)
+# ou deixar vazio para que o script realize o login automaticamente.
+def _parse_env_json(env_var: str) -> Optional[dict]:
+    raw = os.getenv(env_var)
+    if not raw:
+        return None
+    try:
+        return json.loads(raw)
+    except json.JSONDecodeError:
+        print(f"[WARN] Variável {env_var} não contém JSON válido.")
+        return None
+
+
+def load_initial_cookies() -> Dict[str, str]:
+    """Permite manter compatibilidade com configuração manual de cookies."""
+    manual = _parse_env_json("LC_COOKIES_JSON")
+    if manual:
+        return {str(k): str(v) for k, v in manual.items() if v}
+
+    legacy_path = os.getenv("LC_COOKIES_FILE")
+    if legacy_path and Path(legacy_path).exists():
+        try:
+            with open(legacy_path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            if isinstance(data, dict):
+                return {str(k): str(v) for k, v in data.items() if v}
+        except Exception as exc:
+            print(f"[WARN] Falha lendo LC_COOKIES_FILE: {exc}")
+
+    return {
+        "LEETCODE_SESSION": os.getenv("LEETCODE_SESSION", ""),
+        "csrftoken": os.getenv("LEETCODE_CSRF_TOKEN", ""),
+    }
+
+
+COOKIES = {k: v for k, v in load_initial_cookies().items() if v}
+
+def load_credentials() -> List[Dict[str, str]]:
+    """Carrega credenciais de login (lista de {login, password})."""
+    creds: List[Dict[str, str]] = []
+
+    def _append(login: Optional[str], password: Optional[str]):
+        if login and password:
+            creds.append({"login": str(login), "password": str(password)})
+
+    env_login = os.getenv("LC_LOGIN") or os.getenv("LEETCODE_LOGIN")
+    env_password = os.getenv("LC_PASSWORD") or os.getenv("LEETCODE_PASSWORD")
+    _append(env_login, env_password)
+
+    csv_env = os.getenv("LC_CREDENTIALS")
+    if csv_env:
+        for pair in csv_env.split(","):
+            if ":" in pair:
+                user, pwd = pair.split(":", 1)
+                _append(user.strip(), pwd.strip())
+
+    json_env = _parse_env_json("LC_CREDENTIALS_JSON")
+    if isinstance(json_env, dict):
+        json_env = [json_env]
+    if isinstance(json_env, list):
+        for item in json_env:
+            if isinstance(item, dict):
+                _append(item.get("login") or item.get("username"), item.get("password"))
+
+    file_path = os.getenv("LC_CREDENTIALS_FILE")
+    if file_path and Path(file_path).exists():
+        try:
+            with open(file_path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            if isinstance(data, dict):
+                data = [data]
+            if isinstance(data, list):
+                for item in data:
+                    if isinstance(item, dict):
+                        _append(item.get("login") or item.get("username"), item.get("password"))
+        except Exception as exc:
+            print(f"[WARN] Falha lendo LC_CREDENTIALS_FILE: {exc}")
+
+    # remove duplicatas preservando ordem
+    seen = set()
+    unique: List[Dict[str, str]] = []
+    for cred in creds:
+        key = (cred["login"], cred["password"])
+        if key not in seen:
+            seen.add(key)
+            unique.append(cred)
+    return unique
+
+
+CREDENTIALS = load_credentials()
 
 HEADERS = {
     "user-agent": "Mozilla/5.0",
     "referer": "https://leetcode.com",
     "origin": "https://leetcode.com",
-    "x-csrftoken": COOKIES.get("csrftoken", ""),
 }
 
 # Sessão com retry/backoff
@@ -121,6 +207,132 @@ def paced_post(url: str, **kwargs):
     _pace(REQUEST_COOLDOWN)
     kwargs.setdefault("timeout", REQUEST_TIMEOUT)
     return SESSION.post(url, **kwargs)
+
+
+class LeetCodeAuthenticator:
+    """Gerencia login automático e rotação de credenciais."""
+
+    LOGIN_URL = "https://leetcode.com/accounts/login/"
+
+    def __init__(self, session: requests.Session, credentials: List[Dict[str, str]]):
+        self.session = session
+        self.credentials = credentials
+        self.current_index = -1
+        self.logged_user: Optional[str] = None
+        if COOKIES:
+            self._ensure_csrf_header()
+            if session.cookies.get("LEETCODE_SESSION"):
+                self.logged_user = "cookies"
+
+    @property
+    def available_accounts(self) -> int:
+        return len(self.credentials)
+
+    def _ensure_csrf_header(self):
+        token = self.session.cookies.get("csrftoken")
+        if token:
+            self.session.headers["x-csrftoken"] = token
+
+    def ensure_authenticated(self) -> bool:
+        if self.session.cookies.get("LEETCODE_SESSION"):
+            self._ensure_csrf_header()
+            return True
+        if not self.credentials:
+            if COOKIES:
+                self._ensure_csrf_header()
+            return bool(COOKIES)
+        return self.rotate_and_login(force_next=True)
+
+    def rotate_and_login(self, force_next: bool = False) -> bool:
+        if not self.credentials:
+            print("[WARN] Nenhuma credencial disponível para autenticação automática.")
+            return False
+
+        attempts = len(self.credentials)
+        while attempts:
+            attempts -= 1
+            if force_next or self.current_index < 0:
+                self.current_index = (self.current_index + 1) % len(self.credentials)
+            cred = self.credentials[self.current_index]
+            if self._login(cred):
+                self.logged_user = cred.get("login")
+                print(f"[AUTH] Logado como {self.logged_user}.")
+                return True
+            force_next = True  # após falha, tentar próximo
+
+        self.logged_user = None
+        print("[ERROR] Falha ao autenticar com todas as credenciais fornecidas.")
+        return False
+
+    def _login(self, cred: Dict[str, str]) -> bool:
+        login = cred.get("login")
+        password = cred.get("password")
+        if not login or not password:
+            return False
+
+        # limpa cookies anteriores e reaplica os manuais (se houver)
+        self.session.cookies.clear_session_cookies()
+        if COOKIES:
+            self.session.cookies.update(COOKIES)
+
+        try:
+            resp = paced_get(self.LOGIN_URL)
+            resp.raise_for_status()
+        except Exception as exc:
+            print(f"[AUTH] Falha ao acessar página de login: {exc}")
+            return False
+
+        self._ensure_csrf_header()
+        csrf_token = self.session.cookies.get("csrftoken")
+        if not csrf_token:
+            print("[AUTH] csrftoken não encontrado após carregar página de login.")
+            return False
+
+        headers = self.session.headers.copy()
+        headers.update({
+            "referer": self.LOGIN_URL,
+            "content-type": "application/x-www-form-urlencoded",
+        })
+        payload = {
+            "csrfmiddlewaretoken": csrf_token,
+            "login": login,
+            "password": password,
+            "next": "/",
+        }
+
+        try:
+            resp = paced_post(self.LOGIN_URL, data=payload, headers=headers, allow_redirects=False)
+        except Exception as exc:
+            print(f"[AUTH] Erro na requisição de login: {exc}")
+            return False
+
+        if resp.status_code not in {200, 302}:
+            print(f"[AUTH] Login falhou ({resp.status_code}).")
+            return False
+
+        # após 302, seguir redirecionamento para garantir cookie
+        if resp.status_code == 302 and resp.headers.get("Location"):
+            location = urljoin(self.LOGIN_URL, resp.headers["Location"])
+            try:
+                paced_get(location)
+            except Exception:
+                pass
+
+        if not self.session.cookies.get("LEETCODE_SESSION"):
+            print("[AUTH] Cookie LEETCODE_SESSION não definido após login.")
+            return False
+
+        self._ensure_csrf_header()
+        return True
+
+    def handle_auth_issue(self, reason: str) -> bool:
+        if not self.credentials:
+            return False
+        print(f"[AUTH] Tentando trocar de conta devido a: {reason}")
+        return self.rotate_and_login(force_next=True)
+
+
+AUTH_MANAGER = LeetCodeAuthenticator(SESSION, CREDENTIALS)
 
 # índice carregado de /api/problems/all/
 _PROBLEMS_IDX: Dict[str, Dict] = {
@@ -384,13 +596,22 @@ def submit_code(slug_or_id: str, code: str, lang: str) -> Optional[int]:
         print(f"[FAIL] Não encontrou question_id/slug para: {slug_or_id}")
         return None
 
+    if not AUTH_MANAGER.ensure_authenticated():
+        print("[FAIL] Sem sessão autenticada para submeter código.")
+        return None
+
     payload = {"lang": lang, "question_id": qid, "typed_code": code}
     headers = SESSION.headers.copy()
     headers["content-type"] = "application/json"
 
-    try:
-        resp = paced_post(f"https://leetcode.com/problems/{slug}/submit/",
-                          headers=headers, json=payload)
+    for attempt in range(max(1, AUTH_MANAGER.available_accounts)):
+        try:
+            resp = paced_post(f"https://leetcode.com/problems/{slug}/submit/",
+                              headers=headers, json=payload)
+        except Exception as e:
+            print(f"[ERRO] Submissão: {e}")
+            return None
+
         if resp.status_code == 200:
             try:
                 data = resp.json()
@@ -402,9 +623,25 @@ def submit_code(slug_or_id: str, code: str, lang: str) -> Optional[int]:
                 return int(sub_id)
             print("[WARN] submit sem submission_id; tentando fallback...")
             return get_last_submission_id(slug, lang)
+
+        if resp.status_code in {401, 403}:
+            if AUTH_MANAGER.handle_auth_issue(f"status {resp.status_code}"):
+                headers = SESSION.headers.copy()
+                headers["content-type"] = "application/json"
+                continue
+            print(f"[FAIL] Submissão não autorizada: {resp.status_code}")
+            return None
+
+        if resp.status_code == 429:
+            if AUTH_MANAGER.handle_auth_issue("limite de requisições (429)"):
+                headers = SESSION.headers.copy()
+                headers["content-type"] = "application/json"
+                continue
+            print("[FAIL] Limite de requisições atingido e não há credenciais adicionais.")
+            return None
+
         print(f"[FAIL] Submissão: {resp.status_code} - {resp.text[:200]}")
-    except Exception as e:
-        print(f"[ERRO] Submissão: {e}")
+        break
     return None
 
 def get_last_submission_id(slug: str, lang: str) -> Optional[int]:
@@ -542,6 +779,9 @@ def resumo_divergencias(linhas: List[dict]):
 def main():
     linhas_resultado: List[dict] = load_existing_results()
     print(f"[OK] Carregados {len(linhas_resultado)} resultados existentes (particionados ou legado).")
+
+    if not AUTH_MANAGER.ensure_authenticated():
+        print("[WARN] Prosseguindo sem autenticação automática (use cookies ou forneça credenciais).")
 
     # ---------- PRÉ-SCAN: montar índice {slugish -> {modelo -> {linguagem -> path_json}}} ----------
     if not BASE_PATH.exists():
