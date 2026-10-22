@@ -1,0 +1,11 @@
+{
+  "id": 726,
+  "modelo": "allam-2-7b",
+  "linguagem": "Python3",
+  "status": "ok",
+  "categoria": "plausible",
+  "motivo": "código extraído mas apenas 5/6 seções presentes",
+  "resposta": "solution:\ndef countOfAtoms(self, formula: str) -> str:\n    result = []\n    stack = []\n    for char in formula:\n        if char == '(':\n            stack.append(char)\n        elif char == ')':\n            while stack and stack[-1] != '(':\n                stack.pop()\n        else:\n            element = {}\n            while stack and stack[-1] != '(':\n                element[stack.pop()] = 1\n            while stack:\n                element[stack.pop()] += 1\n            result.append(element)\n    return ''.join(sorted(result))\n\nefficiency: HIGH\ntime complexity: O(n)\nspace complexity: O(n)\nenergy implications: LOW ",
+  "code": "class Solution:\n    def countOfAtoms(self, formula: str) -> str:\n        result = []\n        stack = []\n        for char in formula:\n            if char == '(':\n                stack.append(char)\n            elif char == ')':\n                while stack and stack[-1] != '(':\n                    stack.pop()\n            else:\n                element = {}\n                while stack and stack[-1] != '(':\n                    element[stack.pop()] = 1\n                while stack:\n                    element[stack.pop()] += 1\n                result.append(element)\n        return ''.join(sorted(result))\n",
+  "timestamp": "2025-08-05T14:35:42.322069"
+}

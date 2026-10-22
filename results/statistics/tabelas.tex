@@ -1,0 +1,701 @@
+% Gerado por analysis/statistics.py --base corrigida. Nao editar a mao.
+%%BEGIN tab:oar
+\begin{tabular}{lrrr}
+\hline\hline
+\textbf{Outcome} & \textbf{Count} & \textbf{\%} & \textbf{95\% CI} \\
+\hline
+Accepted & 5{,}495 & 51.5 & [50.6, 52.5] \\
+Compilation Error & 579 & 5.4 & [5.0, 5.9] \\
+Wrong Answer & 4{,}592 & 43.1 & [42.1, 44.0] \\
+\hline
+\textbf{Total} & 10{,}666 & 100.0 & \\
+\hline\hline
+\end{tabular}
+%%END tab:oar
+
+%%BEGIN tab:arm_diff
+\begin{tabular}{lrrr}
+\hline\hline
+\textbf{Model} & \textbf{Easy} & \textbf{Medium} & \textbf{Hard} \\
+\hline
+\texttt{moonshotai/kimi-k2-instruct} & 97.8 {\scriptsize[95.3, 99.0]} & 90.9 {\scriptsize[88.1, 93.1]} & 60.0 {\scriptsize[53.5, 66.2]} \\
+\texttt{qwen/qwen3-32b} & 91.6 {\scriptsize[87.7, 94.3]} & 82.2 {\scriptsize[78.1, 85.6]} & 46.5 {\scriptsize[38.1, 55.1]} \\
+\texttt{deepseek-r1-distill-llama-70b} & 85.1 {\scriptsize[80.3, 88.8]} & 73.5 {\scriptsize[69.0, 77.5]} & 37.9 {\scriptsize[30.1, 46.4]} \\
+\texttt{llama-4-maverick-17b-128e-instruct} & 91.2 {\scriptsize[87.3, 94.0]} & 76.5 {\scriptsize[72.5, 80.0]} & 33.8 {\scriptsize[27.8, 40.3]} \\
+\texttt{llama-3.3-70b-versatile} & 88.8 {\scriptsize[84.5, 92.0]} & 58.9 {\scriptsize[54.6, 63.1]} & 22.7 {\scriptsize[17.7, 28.6]} \\
+\texttt{llama-4-scout-17b-16e-instruct} & 91.3 {\scriptsize[87.4, 94.1]} & 58.4 {\scriptsize[54.0, 62.6]} & 20.4 {\scriptsize[15.7, 26.2]} \\
+\texttt{llama3-70b-8192} & 78.3 {\scriptsize[73.0, 82.7]} & 49.9 {\scriptsize[45.6, 54.2]} & 14.2 {\scriptsize[10.3, 19.4]} \\
+\texttt{llama-3.1-8b-instant} & 66.7 {\scriptsize[60.9, 72.0]} & 34.5 {\scriptsize[30.5, 38.8]} & 5.8 {\scriptsize[3.4, 9.6]} \\
+\texttt{llama3-8b-8192} & 59.4 {\scriptsize[53.5, 65.0]} & 27.8 {\scriptsize[24.1, 31.9]} & 4.4 {\scriptsize[2.4, 8.0]} \\
+\texttt{gemma2-9b-it} & 62.3 {\scriptsize[56.5, 67.8]} & 24.9 {\scriptsize[21.3, 28.8]} & 3.6 {\scriptsize[1.8, 6.9]} \\
+\texttt{allam-2-7b} & 7.2 {\scriptsize[4.7, 10.9]} & 0.6 {\scriptsize[0.2, 1.7]} & 0.0 {\scriptsize[0.0, 1.7]} \\
+\hline\hline
+\end{tabular}
+%%END tab:arm_diff
+
+%%BEGIN tab:arm_lang
+\begin{tabular}{lrrr}
+\hline\hline
+\textbf{Model} & \textbf{C++} & \textbf{Java} & \textbf{Python3} \\
+\hline
+\texttt{moonshotai/kimi-k2-instruct} & 86.3 {\scriptsize[82.2, 89.6]} & 83.6 {\scriptsize[79.3, 87.2]} & 87.8 {\scriptsize[83.9, 90.9]} \\
+\texttt{qwen/qwen3-32b} & 86.7 {\scriptsize[81.9, 90.4]} & 82.7 {\scriptsize[77.6, 86.8]} & 71.1 {\scriptsize[65.8, 76.0]} \\
+\texttt{deepseek-r1-distill-llama-70b} & 76.1 {\scriptsize[70.5, 80.9]} & 79.3 {\scriptsize[74.0, 83.7]} & 60.1 {\scriptsize[54.4, 65.6]} \\
+\texttt{llama-4-maverick-17b-128e-instruct} & 69.8 {\scriptsize[64.6, 74.5]} & 71.7 {\scriptsize[66.5, 76.4]} & 72.0 {\scriptsize[67.0, 76.6]} \\
+\texttt{llama-3.3-70b-versatile} & 56.4 {\scriptsize[51.1, 61.6]} & 58.3 {\scriptsize[53.0, 63.5]} & 62.2 {\scriptsize[56.9, 67.2]} \\
+\texttt{llama-4-scout-17b-16e-instruct} & 55.7 {\scriptsize[50.3, 60.9]} & 58.6 {\scriptsize[53.3, 63.8]} & 62.5 {\scriptsize[57.2, 67.5]} \\
+\texttt{llama3-70b-8192} & 47.0 {\scriptsize[41.8, 52.4]} & 50.9 {\scriptsize[45.6, 56.2]} & 51.2 {\scriptsize[45.9, 56.5]} \\
+\texttt{llama-3.1-8b-instant} & 31.8 {\scriptsize[27.1, 37.0]} & 36.0 {\scriptsize[31.1, 41.3]} & 42.9 {\scriptsize[37.7, 48.2]} \\
+\texttt{llama3-8b-8192} & 28.6 {\scriptsize[24.0, 33.6]} & 30.4 {\scriptsize[25.7, 35.5]} & 34.8 {\scriptsize[29.9, 40.1]} \\
+\texttt{gemma2-9b-it} & 29.2 {\scriptsize[24.6, 34.2]} & 29.8 {\scriptsize[25.1, 34.9]} & 32.1 {\scriptsize[27.4, 37.3]} \\
+\texttt{allam-2-7b} & 1.2 {\scriptsize[0.5, 3.0]} & 3.3 {\scriptsize[1.8, 5.8]} & 2.4 {\scriptsize[1.2, 4.6]} \\
+\hline\hline
+\end{tabular}
+%%END tab:arm_lang
+
+%%BEGIN tab:arl_diff
+\begin{tabular}{lrrr}
+\hline\hline
+\textbf{Language} & \textbf{Easy} & \textbf{Medium} & \textbf{Hard} \\
+\hline
+C++ & 72.8 {\scriptsize[69.9, 75.4]} & 50.0 {\scriptsize[47.7, 52.3]} & 20.5 {\scriptsize[17.8, 23.6]} \\
+Java & 74.4 {\scriptsize[71.6, 77.0]} & 52.0 {\scriptsize[49.7, 54.4]} & 21.5 {\scriptsize[18.7, 24.6]} \\
+Python3 & 76.2 {\scriptsize[73.5, 78.8]} & 52.6 {\scriptsize[50.3, 54.9]} & 21.0 {\scriptsize[18.3, 24.0]} \\
+\hline\hline
+\end{tabular}
+%%END tab:arl_diff
+
+%%BEGIN fig:ard
+\addplot coordinates {(Easy,74.5) (Medium,51.6) (Hard,21.0)};
+%%END fig:ard
+
+%%BEGIN fig:arl
+\addplot coordinates {(C++,50.3) (Java,51.9) (Python3,52.4)};
+%%END fig:arl
+
+%%BEGIN fig:arm:coords
+allam-2-7b,
+        deepseek-r1-distill-llama-70b,
+        gemma2-9b-it,
+        llama-3.1-8b-instant,
+        llama-3.3-70b-versatile,
+        llama-4-maverick-17b-128e-instruct,
+        llama-4-scout-17b-16e-instruct,
+        llama3-70b-8192,
+        llama3-8b-8192,
+        moonshotai/kimi-k2-instruct,
+        qwen/qwen3-32b
+%%END fig:arm:coords
+
+%%BEGIN fig:arm
+\addplot coordinates {
+    (allam-2-7b,2.3)
+    (deepseek-r1-distill-llama-70b,71.5)
+    (gemma2-9b-it,30.4)
+    (llama-3.1-8b-instant,36.9)
+    (llama-3.3-70b-versatile,59.0)
+    (llama-4-maverick-17b-128e-instruct,71.2)
+    (llama-4-scout-17b-16e-instruct,58.9)
+    (llama3-70b-8192,49.7)
+    (llama3-8b-8192,31.2)
+    (moonshotai/kimi-k2-instruct,85.9)
+    (qwen/qwen3-32b,79.7)
+};
+%%END fig:arm
+
+%%BEGIN tab:status_model
+\begin{tabular}{lrrrr}
+\hline\hline
+\textbf{Model} & \textbf{Accepted} & \textbf{CE} & \textbf{WA} & \textbf{Total} \\
+\hline
+\texttt{moonshotai/kimi-k2-instruct} & 866 (85.9\%) & 5 (0.5\%) & 137 (13.6\%) & 1{,}008 \\
+\texttt{qwen/qwen3-32b} & 642 (79.7\%) & 28 (3.5\%) & 136 (16.9\%) & 806 \\
+\texttt{deepseek-r1-distill-llama-70b} & 583 (71.5\%) & 26 (3.2\%) & 206 (25.3\%) & 815 \\
+\texttt{llama-4-maverick-17b-128e-instruct} & 699 (71.2\%) & 36 (3.7\%) & 247 (25.2\%) & 982 \\
+\texttt{llama-3.3-70b-versatile} & 594 (59.0\%) & 18 (1.8\%) & 395 (39.2\%) & 1{,}007 \\
+\texttt{llama-4-scout-17b-16e-instruct} & 594 (58.9\%) & 27 (2.7\%) & 387 (38.4\%) & 1{,}008 \\
+\texttt{llama3-70b-8192} & 501 (49.7\%) & 30 (3.0\%) & 477 (47.3\%) & 1{,}008 \\
+\texttt{llama-3.1-8b-instant} & 372 (36.9\%) & 64 (6.3\%) & 572 (56.7\%) & 1{,}008 \\
+\texttt{llama3-8b-8192} & 315 (31.2\%) & 71 (7.0\%) & 622 (61.7\%) & 1{,}008 \\
+\texttt{gemma2-9b-it} & 306 (30.4\%) & 60 (6.0\%) & 642 (63.7\%) & 1{,}008 \\
+\texttt{allam-2-7b} & 23 (2.3\%) & 214 (21.2\%) & 771 (76.5\%) & 1{,}008 \\
+\hline
+\textbf{All models} & 5{,}495 (51.5\%) & 579 (5.4\%) & 4{,}592 (43.1\%) & 10{,}666 \\
+\hline\hline
+\end{tabular}
+%%END tab:status_model
+
+%%BEGIN tab:status_lang
+\begin{tabular}{lrrr}
+\hline\hline
+\textbf{Verdict} & \textbf{C++} & \textbf{Java} & \textbf{Python3} \\
+\hline
+Accepted & 1{,}770 (50.3\%) & 1{,}836 (51.9\%) & 1{,}889 (52.4\%) \\
+Compilation Error & 333 (9.5\%) & 245 (6.9\%) & 1 (0.0\%) \\
+Wrong Answer (proper) & 1{,}122 (31.9\%) & 1{,}167 (33.0\%) & 1{,}113 (30.8\%) \\
+Runtime Error & 163 (4.6\%) & 150 (4.2\%) & 434 (12.0\%) \\
+Time Limit Exceeded & 120 (3.4\%) & 128 (3.6\%) & 145 (4.0\%) \\
+Memory Limit Exceeded & 11 (0.3\%) & 9 (0.3\%) & 13 (0.4\%) \\
+Timeout & 3 (0.1\%) & 1 (0.0\%) & 13 (0.4\%) \\
+\hline
+\textbf{Total} & \textbf{3{,}522} & \textbf{3{,}536} & \textbf{3{,}608} \\
+\hline\hline
+\end{tabular}
+%%END tab:status_lang
+
+%%BEGIN tab:attrition
+\begin{tabular}{lrrrrrr}
+\hline\hline
+\textbf{Difficulty} & \textbf{Planned} & \textbf{Judged} & \textbf{Not submitted} & \textbf{Acc. (judged)} & \textbf{Lower} & \textbf{Upper} \\
+\hline
+Easy & 3{,}036 & 3{,}022 & 14 (0.5\%) & 74.5 & 74.1 & 74.6 \\
+Medium & 5{,}577 & 5{,}367 & 210 (3.8\%) & 51.6 & 49.6 & 53.4 \\
+Hard & 2{,}475 & 2{,}277 & 198 (8.0\%) & 21.0 & 19.3 & 27.3 \\
+\hline
+\textbf{All} & 11{,}088 & 10{,}666 & 422 (3.8\%) & 51.5 & 49.6 & 53.4 \\
+\hline\hline
+\end{tabular}
+%%END tab:attrition
+
+%%BEGIN tab:oaet
+\begin{tabular}{lr}
+\hline\hline
+\textbf{Statistic} & \textbf{Value (ms)} \\
+\hline
+Mean & 69.6 \\
+Median & 3.0 \\
+Std.\ & 372.6 \\
+P99 & 1382.1 \\
+Max & 9{,}662 \\
+\hline\hline
+\end{tabular}
+%%END tab:oaet
+
+%%BEGIN tab:etd_stats
+\begin{tabular}{lrrrrr}
+\hline\hline
+\textbf{Difficulty} & \textbf{$n$} & \textbf{Mean} & \textbf{Median} & \textbf{Std.} & \textbf{Max} \\
+\hline
+Easy & 2{,}250 & 9.0 & 0.0 & 159.4 & 7{,}451 \\
+Medium & 2{,}767 & 83.7 & 9.0 & 338.4 & 6{,}696 \\
+Hard & 478 & 273.0 & 51.0 & 868.9 & 9{,}662 \\
+\hline\hline
+\end{tabular}
+%%END tab:etd_stats
+
+%%BEGIN fig:etd
+\addplot coordinates {(Easy,9.0) (Medium,83.7) (Hard,273.0)};
+%%END fig:etd
+
+%%BEGIN fig:etl
+\addplot coordinates {(C++,28.3) (Java,25.4) (Python3,151.2)};
+%%END fig:etl
+
+%%BEGIN fig:etm:coords
+allam-2-7b,
+        qwen/qwen3-32b,
+        llama3-70b-8192,
+        gemma2-9b-it,
+        llama-4-scout-17b-16e-instruct,
+        llama-4-maverick-17b-128e-instruct,
+        llama-3.1-8b-instant,
+        llama3-8b-8192,
+        moonshotai/kimi-k2-instruct,
+        deepseek-r1-distill-llama-70b,
+        llama-3.3-70b-versatile
+%%END fig:etm:coords
+
+%%BEGIN fig:etm
+\addplot coordinates {
+    (allam-2-7b,33.6)
+    (qwen/qwen3-32b,40.6)
+    (llama3-70b-8192,45.7)
+    (gemma2-9b-it,61.7)
+    (llama-4-scout-17b-16e-instruct,64.6)
+    (llama-4-maverick-17b-128e-instruct,68.8)
+    (llama-3.1-8b-instant,70.9)
+    (llama3-8b-8192,71.7)
+    (moonshotai/kimi-k2-instruct,79.4)
+    (deepseek-r1-distill-llama-70b,83.3)
+    (llama-3.3-70b-versatile,102.8)
+};
+%%END fig:etm
+
+%%BEGIN tab:etm_diff
+\begin{tabular}{lrrr}
+\hline\hline
+\textbf{Model} & \textbf{Easy} & \textbf{Medium} & \textbf{Hard} \\
+\hline
+\texttt{allam-2-7b} & 3.0 {\scriptsize(20)} & 237.7 {\scriptsize(3)} & --- \\
+\texttt{qwen/qwen3-32b} & 4.2 {\scriptsize(250)} & 54.4 {\scriptsize(332)} & 115.9 {\scriptsize(60)} \\
+\texttt{llama3-70b-8192} & 4.8 {\scriptsize(216)} & 69.2 {\scriptsize(253)} & 135.9 {\scriptsize(32)} \\
+\texttt{gemma2-9b-it} & 6.4 {\scriptsize(172)} & 139.0 {\scriptsize(126)} & 33.8 {\scriptsize(8)} \\
+\texttt{llama-4-scout-17b-16e-instruct} & 5.3 {\scriptsize(252)} & 74.6 {\scriptsize(296)} & 324.9 {\scriptsize(46)} \\
+\texttt{llama-4-maverick-17b-128e-instruct} & 4.1 {\scriptsize(249)} & 83.4 {\scriptsize(377)} & 214.1 {\scriptsize(73)} \\
+\texttt{llama-3.1-8b-instant} & 7.1 {\scriptsize(184)} & 82.3 {\scriptsize(175)} & 820.1 {\scriptsize(13)} \\
+\texttt{llama3-8b-8192} & 51.0 {\scriptsize(164)} & 90.5 {\scriptsize(141)} & 145.6 {\scriptsize(10)} \\
+\texttt{moonshotai/kimi-k2-instruct} & 4.3 {\scriptsize(270)} & 66.2 {\scriptsize(461)} & 274.8 {\scriptsize(135)} \\
+\texttt{deepseek-r1-distill-llama-70b} & 4.4 {\scriptsize(228)} & 87.1 {\scriptsize(305)} & 419.4 {\scriptsize(50)} \\
+\texttt{llama-3.3-70b-versatile} & 11.6 {\scriptsize(245)} & 134.4 {\scriptsize(298)} & 356.3 {\scriptsize(51)} \\
+\hline\hline
+\end{tabular}
+%%END tab:etm_diff
+
+%%BEGIN tab:etm_lang
+\begin{tabular}{lrrr}
+\hline\hline
+\textbf{Model} & \textbf{C++} & \textbf{Java} & \textbf{Python3} \\
+\hline
+\texttt{allam-2-7b} & 0.0 {\scriptsize(4)} & 6.1 {\scriptsize(11)} & 88.2 {\scriptsize(8)} \\
+\texttt{qwen/qwen3-32b} & 33.3 {\scriptsize(215)} & 23.2 {\scriptsize(215)} & 65.6 {\scriptsize(212)} \\
+\texttt{llama3-70b-8192} & 16.0 {\scriptsize(158)} & 23.0 {\scriptsize(171)} & 95.5 {\scriptsize(172)} \\
+\texttt{gemma2-9b-it} & 25.2 {\scriptsize(98)} & 31.1 {\scriptsize(100)} & 123.3 {\scriptsize(108)} \\
+\texttt{llama-4-scout-17b-16e-instruct} & 20.5 {\scriptsize(187)} & 27.0 {\scriptsize(197)} & 139.1 {\scriptsize(210)} \\
+\texttt{llama-4-maverick-17b-128e-instruct} & 37.5 {\scriptsize(229)} & 27.4 {\scriptsize(228)} & 137.5 {\scriptsize(242)} \\
+\texttt{llama-3.1-8b-instant} & 9.1 {\scriptsize(107)} & 10.6 {\scriptsize(121)} & 167.5 {\scriptsize(144)} \\
+\texttt{llama3-8b-8192} & 23.5 {\scriptsize(96)} & 17.1 {\scriptsize(102)} & 158.8 {\scriptsize(117)} \\
+\texttt{moonshotai/kimi-k2-instruct} & 33.5 {\scriptsize(290)} & 19.9 {\scriptsize(281)} & 181.3 {\scriptsize(295)} \\
+\texttt{deepseek-r1-distill-llama-70b} & 45.0 {\scriptsize(197)} & 36.9 {\scriptsize(214)} & 184.7 {\scriptsize(172)} \\
+\texttt{llama-3.3-70b-versatile} & 19.8 {\scriptsize(189)} & 33.0 {\scriptsize(196)} & 243.5 {\scriptsize(209)} \\
+\hline\hline
+\end{tabular}
+%%END tab:etm_lang
+
+%%BEGIN tab:etl_diff
+\begin{tabular}{lrrr}
+\hline\hline
+\textbf{Language} & \textbf{Easy} & \textbf{Medium} & \textbf{Hard} \\
+\hline
+C++ & 2.0 {\scriptsize(732)} & 37.3 {\scriptsize(885)} & 102.1 {\scriptsize(153)} \\
+Java & 3.1 {\scriptsize(748)} & 35.5 {\scriptsize(927)} & 70.8 {\scriptsize(161)} \\
+Python3 & 21.4 {\scriptsize(770)} & 173.5 {\scriptsize(955)} & 631.0 {\scriptsize(164)} \\
+\hline\hline
+\end{tabular}
+%%END tab:etl_diff
+
+%%BEGIN tab:oamu
+\begin{tabular}{lr}
+\hline\hline
+\textbf{Statistic} & \textbf{Value (MB)} \\
+\hline
+Mean & 33.1 \\
+Median & 20.5 \\
+Std.\ & 36.4 \\
+P99 & 174.5 \\
+Max & 568.6 \\
+\hline\hline
+\end{tabular}
+%%END tab:oamu
+
+%%BEGIN tab:mud_stats
+\begin{tabular}{lrrrrr}
+\hline\hline
+\textbf{Difficulty} & \textbf{$n$} & \textbf{Mean} & \textbf{Median} & \textbf{Std.} & \textbf{Max} \\
+\hline
+Easy & 2{,}250 & 24.8 & 19.1 & 14.1 & 64.7 \\
+Medium & 2{,}767 & 36.8 & 24.7 & 40.6 & 568.6 \\
+Hard & 478 & 51.0 & 33.9 & 63.6 & 434.3 \\
+\hline\hline
+\end{tabular}
+%%END tab:mud_stats
+
+%%BEGIN fig:mud
+\addplot coordinates {(Easy,24.8) (Medium,36.8) (Hard,51.0)};
+%%END fig:mud
+
+%%BEGIN fig:mul
+\addplot coordinates {(C++,29.1) (Java,48.0) (Python3,22.4)};
+%%END fig:mul
+
+%%BEGIN fig:mum:coords
+allam-2-7b,
+        llama3-8b-8192,
+        llama-3.1-8b-instant,
+        gemma2-9b-it,
+        llama3-70b-8192,
+        llama-3.3-70b-versatile,
+        llama-4-scout-17b-16e-instruct,
+        qwen/qwen3-32b,
+        llama-4-maverick-17b-128e-instruct,
+        moonshotai/kimi-k2-instruct,
+        deepseek-r1-distill-llama-70b
+%%END fig:mum:coords
+
+%%BEGIN fig:mum
+\addplot coordinates {
+    (allam-2-7b,28.4)
+    (llama3-8b-8192,28.7)
+    (llama-3.1-8b-instant,28.7)
+    (gemma2-9b-it,29.3)
+    (llama3-70b-8192,31.7)
+    (llama-3.3-70b-versatile,31.9)
+    (llama-4-scout-17b-16e-instruct,32.2)
+    (qwen/qwen3-32b,32.7)
+    (llama-4-maverick-17b-128e-instruct,33.6)
+    (moonshotai/kimi-k2-instruct,35.9)
+    (deepseek-r1-distill-llama-70b,39.6)
+};
+%%END fig:mum
+
+%%BEGIN tab:mum_diff
+\begin{tabular}{lrrr}
+\hline\hline
+\textbf{Model} & \textbf{Easy} & \textbf{Medium} & \textbf{Hard} \\
+\hline
+\texttt{allam-2-7b} & 28.3 {\scriptsize(20)} & 28.8 {\scriptsize(3)} & --- \\
+\texttt{llama3-8b-8192} & 24.7 {\scriptsize(164)} & 33.1 {\scriptsize(141)} & 30.4 {\scriptsize(10)} \\
+\texttt{llama-3.1-8b-instant} & 24.8 {\scriptsize(184)} & 31.8 {\scriptsize(175)} & 43.2 {\scriptsize(13)} \\
+\texttt{gemma2-9b-it} & 25.2 {\scriptsize(172)} & 33.6 {\scriptsize(126)} & 50.0 {\scriptsize(8)} \\
+\texttt{llama3-70b-8192} & 24.9 {\scriptsize(216)} & 35.9 {\scriptsize(253)} & 44.9 {\scriptsize(32)} \\
+\texttt{llama-3.3-70b-versatile} & 24.7 {\scriptsize(245)} & 35.0 {\scriptsize(298)} & 48.7 {\scriptsize(51)} \\
+\texttt{llama-4-scout-17b-16e-instruct} & 24.4 {\scriptsize(252)} & 37.2 {\scriptsize(296)} & 42.4 {\scriptsize(46)} \\
+\texttt{qwen/qwen3-32b} & 24.4 {\scriptsize(250)} & 36.7 {\scriptsize(332)} & 45.5 {\scriptsize(60)} \\
+\texttt{llama-4-maverick-17b-128e-instruct} & 25.2 {\scriptsize(249)} & 37.2 {\scriptsize(377)} & 43.3 {\scriptsize(73)} \\
+\texttt{moonshotai/kimi-k2-instruct} & 24.4 {\scriptsize(270)} & 37.0 {\scriptsize(461)} & 55.5 {\scriptsize(135)} \\
+\texttt{deepseek-r1-distill-llama-70b} & 24.9 {\scriptsize(228)} & 44.4 {\scriptsize(305)} & 77.0 {\scriptsize(50)} \\
+\hline\hline
+\end{tabular}
+%%END tab:mum_diff
+
+%%BEGIN tab:mum_lang
+\begin{tabular}{lrrr}
+\hline\hline
+\textbf{Model} & \textbf{C++} & \textbf{Java} & \textbf{Python3} \\
+\hline
+\texttt{allam-2-7b} & 8.1 {\scriptsize(4)} & 43.2 {\scriptsize(11)} & 18.1 {\scriptsize(8)} \\
+\texttt{llama3-8b-8192} & 21.6 {\scriptsize(96)} & 45.3 {\scriptsize(102)} & 20.0 {\scriptsize(117)} \\
+\texttt{llama-3.1-8b-instant} & 21.1 {\scriptsize(107)} & 45.5 {\scriptsize(121)} & 20.4 {\scriptsize(144)} \\
+\texttt{gemma2-9b-it} & 22.6 {\scriptsize(98)} & 45.2 {\scriptsize(100)} & 20.7 {\scriptsize(108)} \\
+\texttt{llama3-70b-8192} & 27.0 {\scriptsize(158)} & 47.2 {\scriptsize(171)} & 20.7 {\scriptsize(172)} \\
+\texttt{llama-3.3-70b-versatile} & 24.5 {\scriptsize(189)} & 47.6 {\scriptsize(196)} & 23.9 {\scriptsize(209)} \\
+\texttt{llama-4-scout-17b-16e-instruct} & 26.4 {\scriptsize(187)} & 48.2 {\scriptsize(197)} & 22.3 {\scriptsize(210)} \\
+\texttt{qwen/qwen3-32b} & 29.3 {\scriptsize(215)} & 47.7 {\scriptsize(215)} & 21.0 {\scriptsize(212)} \\
+\texttt{llama-4-maverick-17b-128e-instruct} & 29.0 {\scriptsize(229)} & 49.4 {\scriptsize(228)} & 23.0 {\scriptsize(242)} \\
+\texttt{moonshotai/kimi-k2-instruct} & 36.9 {\scriptsize(290)} & 47.6 {\scriptsize(281)} & 23.8 {\scriptsize(295)} \\
+\texttt{deepseek-r1-distill-llama-70b} & 37.5 {\scriptsize(197)} & 52.7 {\scriptsize(214)} & 25.6 {\scriptsize(172)} \\
+\hline\hline
+\end{tabular}
+%%END tab:mum_lang
+
+%%BEGIN tab:mul_diff
+\begin{tabular}{lrrr}
+\hline\hline
+\textbf{Language} & \textbf{Easy} & \textbf{Medium} & \textbf{Hard} \\
+\hline
+C++ & 12.8 {\scriptsize(732)} & 36.4 {\scriptsize(885)} & 64.5 {\scriptsize(153)} \\
+Java & 42.8 {\scriptsize(748)} & 50.7 {\scriptsize(927)} & 56.8 {\scriptsize(161)} \\
+Python3 & 18.6 {\scriptsize(770)} & 23.8 {\scriptsize(955)} & 32.6 {\scriptsize(164)} \\
+\hline\hline
+\end{tabular}
+%%END tab:mul_diff
+
+%%BEGIN tab:shapiro
+\begin{tabular}{lrr}
+\hline
+\textbf{Test} & \textbf{$W$} & \textbf{$p$} \\
+\hline
+Execution time (raw) & 0.161 & $3.1\times10^{-94}$ \\
+Memory usage (raw) & 0.502 & $2.5\times10^{-82}$ \\
+Execution-time residuals (by model) & 0.178 & $9.8\times10^{-94}$ \\
+Memory residuals (by model) & 0.520 & $1.6\times10^{-81}$ \\
+\hline
+\end{tabular}
+%%END tab:shapiro
+
+%%BEGIN tab:anova
+\begin{tabular}{llrrrrlr}
+\hline
+\textbf{Factor} & \textbf{Metric} & \textbf{$F$} & \textbf{$\eta^{2}$} & \textbf{$\chi^2$ / $H$} & \textbf{$p$} & \textbf{Effect} & \textbf{Sig. pairs} \\
+\hline
+Model & Acc. & 321.55 & 0.232 & 2472.60 & $<10^{-300}$ & large ($\eta^{2}=0.23$) & 52/55 \\
+Language & Acc. & 1.75 & 0.000 & 3.49 & 0.174 & n.s. & --- \\
+Difficulty & Acc. & 863.00 & 0.139 & 1485.96 & $<10^{-300}$ & medium ($\eta^{2}=0.14$) & 3/3 \\
+Model & Time & 1.26 & 0.002 & 27.80 & 0.002 & small ($\varepsilon^{2}=0.01$) & 0/55 \\
+Language & Time & 70.87 & 0.025 & 285.73 & $9.0\times10^{-63}$ & small ($\varepsilon^{2}=0.05$) & 3/3 \\
+Difficulty & Time & 106.93 & 0.037 & 1209.75 & $2.0\times10^{-263}$ & large ($\varepsilon^{2}=0.22$) & 3/3 \\
+Model & Mem. & 3.93 & 0.007 & 21.77 & 0.016 & small ($\varepsilon^{2}=0.00$) & 1/55 \\
+Language & Mem. & 270.08 & 0.090 & 2772.49 & $<10^{-300}$ & large ($\varepsilon^{2}=0.50$) & 3/3 \\
+Difficulty & Mem. & 137.38 & 0.048 & 330.19 & $2.0\times10^{-72}$ & medium ($\varepsilon^{2}=0.06$) & 3/3 \\
+\hline
+\end{tabular}
+%%END tab:anova
+
+%%BEGIN tab:cohen_dh
+\begin{tabular}{lrr}
+\hline
+\textbf{Comparison} & \textbf{Cohen's $d$} & \textbf{Cohen's $h$} \\
+\hline
+C++ vs.\ Java & 0.03 & 0.03 \\
+C++ vs.\ Python3 & 0.04 & 0.04 \\
+Java vs.\ Python3 & 0.01 & 0.01 \\
+Easy vs.\ Medium & 0.48 & 0.48 \\
+Medium vs.\ Hard & 0.64 & 0.65 \\
+Easy vs.\ Hard & 1.26 & 1.13 \\
+\hline
+\end{tabular}
+%%END tab:cohen_dh
+
+%%BEGIN tab:pearson_spearman
+\begin{tabular}{lrr}
+\hline
+\textbf{Pair} & \textbf{Pearson $r$ ($p$)} & \textbf{Spearman $\rho$ ($p$)} \\
+\hline
+Acceptance $\times$ execution time & 0.39 (0.242) & 0.40 (0.223) \\
+Acceptance $\times$ memory & 0.80 (0.003) & 0.92 (0.000) \\
+Execution time $\times$ memory & 0.39 (0.240) & 0.40 (0.223) \\
+\hline
+\multicolumn{3}{l}{\emph{Composition control (memory relative to the same problem and language)}} \\
+Acceptance $\times$ relative memory & 0.22 (0.524) & 0.50 (0.117) \\
+Acceptance $\times$ relative time & 0.06 (0.857) & -0.12 (0.729) \\
+\multicolumn{3}{l}{\emph{Common subset: 126 problem--language pairs accepted for all 10 models}} \\
+Acceptance $\times$ memory ($N=10$) & -0.47 (0.169) & -0.42 (0.229) \\
+\hline
+\end{tabular}
+%%END tab:pearson_spearman
+
+%%BEGIN tab:gee
+\begin{tabular}{lrr}
+\hline
+\textbf{Fixed effect} & \textbf{GEE OR [95\% CI]} & \textbf{GEE $p$} \\
+\hline
+\texttt{moonshotai/kimi-k2-instruct} & 26.03 [19.07, 35.53] & $1.3\times10^{-93}$ \\
+\texttt{qwen/qwen3-32b} & 9.37 [7.28, 12.06] & $1.1\times10^{-67}$ \\
+\texttt{deepseek-r1-distill-llama-70b} & 5.83 [4.51, 7.54] & $2.4\times10^{-41}$ \\
+\texttt{llama-4-maverick-17b-128e-instruct} & 8.37 [6.55, 10.70] & $1.9\times10^{-64}$ \\
+\texttt{llama-3.3-70b-versatile} & 4.25 [3.46, 5.21] & $9.4\times10^{-44}$ \\
+\texttt{llama-4-scout-17b-16e-instruct} & 4.23 [3.43, 5.22] & $3.2\times10^{-41}$ \\
+\texttt{llama3-70b-8192} & 2.63 [2.19, 3.15] & $1.2\times10^{-25}$ \\
+\texttt{llama-3.1-8b-instant} & 1.36 [1.15, 1.61] & $2.9\times10^{-4}$ \\
+\texttt{gemma2-9b-it} & 0.95 [0.80, 1.13] & 0.569 \\
+\texttt{allam-2-7b} & 0.04 [0.03, 0.07] & $1.4\times10^{-42}$ \\
+Language: Java & 1.11 [1.02, 1.21] & 0.015 \\
+Language: Python3 & 1.16 [1.04, 1.28] & 0.007 \\
+Difficulty: Medium & 0.24 [0.16, 0.37] & $2.9\times10^{-11}$ \\
+Difficulty: Hard & 0.04 [0.03, 0.07] & $6.3\times10^{-32}$ \\
+\hline
+\end{tabular}
+%%END tab:gee
+
+%%BEGIN tab:oar:plain
+\begin{tabular}{lrr}
+\hline\hline
+\textbf{Outcome} & \textbf{Count} & \textbf{\%} \\
+\hline
+Accepted & 5{,}495 & 51.5 \\
+Compilation Error & 579 & 5.4 \\
+Wrong Answer & 4{,}592 & 43.1 \\
+\hline
+\textbf{Total} & 10{,}666 & 100.0 \\
+\hline\hline
+\end{tabular}
+%%END tab:oar:plain
+
+%%BEGIN tab:arm_diff:plain
+\begin{tabular}{lrrr}
+\hline\hline
+\textbf{Model} & \textbf{Easy} & \textbf{Medium} & \textbf{Hard} \\
+\hline
+\texttt{moonshotai/kimi-k2-instruct} & 97.8 & 90.9 & 60.0 \\
+\texttt{qwen/qwen3-32b} & 91.6 & 82.2 & 46.5 \\
+\texttt{deepseek-r1-distill-llama-70b} & 85.1 & 73.5 & 37.9 \\
+\texttt{llama-4-maverick-17b-128e-instruct} & 91.2 & 76.5 & 33.8 \\
+\texttt{llama-3.3-70b-versatile} & 88.8 & 58.9 & 22.7 \\
+\texttt{llama-4-scout-17b-16e-instruct} & 91.3 & 58.4 & 20.4 \\
+\texttt{llama3-70b-8192} & 78.3 & 49.9 & 14.2 \\
+\texttt{llama-3.1-8b-instant} & 66.7 & 34.5 & 5.8 \\
+\texttt{llama3-8b-8192} & 59.4 & 27.8 & 4.4 \\
+\texttt{gemma2-9b-it} & 62.3 & 24.9 & 3.6 \\
+\texttt{allam-2-7b} & 7.2 & 0.6 & 0.0 \\
+\hline\hline
+\end{tabular}
+%%END tab:arm_diff:plain
+
+%%BEGIN tab:arm_lang:plain
+\begin{tabular}{lrrr}
+\hline\hline
+\textbf{Model} & \textbf{C++} & \textbf{Java} & \textbf{Python3} \\
+\hline
+\texttt{moonshotai/kimi-k2-instruct} & 86.3 & 83.6 & 87.8 \\
+\texttt{qwen/qwen3-32b} & 86.7 & 82.7 & 71.1 \\
+\texttt{deepseek-r1-distill-llama-70b} & 76.1 & 79.3 & 60.1 \\
+\texttt{llama-4-maverick-17b-128e-instruct} & 69.8 & 71.7 & 72.0 \\
+\texttt{llama-3.3-70b-versatile} & 56.4 & 58.3 & 62.2 \\
+\texttt{llama-4-scout-17b-16e-instruct} & 55.7 & 58.6 & 62.5 \\
+\texttt{llama3-70b-8192} & 47.0 & 50.9 & 51.2 \\
+\texttt{llama-3.1-8b-instant} & 31.8 & 36.0 & 42.9 \\
+\texttt{llama3-8b-8192} & 28.6 & 30.4 & 34.8 \\
+\texttt{gemma2-9b-it} & 29.2 & 29.8 & 32.1 \\
+\texttt{allam-2-7b} & 1.2 & 3.3 & 2.4 \\
+\hline\hline
+\end{tabular}
+%%END tab:arm_lang:plain
+
+%%BEGIN tab:arl_diff:plain
+\begin{tabular}{lrrr}
+\hline\hline
+\textbf{Language} & \textbf{Easy} & \textbf{Medium} & \textbf{Hard} \\
+\hline
+C++ & 72.8 & 50.0 & 20.5 \\
+Java & 74.4 & 52.0 & 21.5 \\
+Python3 & 76.2 & 52.6 & 21.0 \\
+\hline\hline
+\end{tabular}
+%%END tab:arl_diff:plain
+
+%%BEGIN tab:etm_diff:plain
+\begin{tabular}{lrrr}
+\hline\hline
+\textbf{Model} & \textbf{Easy} & \textbf{Medium} & \textbf{Hard} \\
+\hline
+\texttt{allam-2-7b} & 3.0 & 237.7 & --- \\
+\texttt{qwen/qwen3-32b} & 4.2 & 54.4 & 115.9 \\
+\texttt{llama3-70b-8192} & 4.8 & 69.2 & 135.9 \\
+\texttt{gemma2-9b-it} & 6.4 & 139.0 & 33.8 \\
+\texttt{llama-4-scout-17b-16e-instruct} & 5.3 & 74.6 & 324.9 \\
+\texttt{llama-4-maverick-17b-128e-instruct} & 4.1 & 83.4 & 214.1 \\
+\texttt{llama-3.1-8b-instant} & 7.1 & 82.3 & 820.1 \\
+\texttt{llama3-8b-8192} & 51.0 & 90.5 & 145.6 \\
+\texttt{moonshotai/kimi-k2-instruct} & 4.3 & 66.2 & 274.8 \\
+\texttt{deepseek-r1-distill-llama-70b} & 4.4 & 87.1 & 419.4 \\
+\texttt{llama-3.3-70b-versatile} & 11.6 & 134.4 & 356.3 \\
+\hline\hline
+\end{tabular}
+%%END tab:etm_diff:plain
+
+%%BEGIN tab:etm_lang:plain
+\begin{tabular}{lrrr}
+\hline\hline
+\textbf{Model} & \textbf{C++} & \textbf{Java} & \textbf{Python3} \\
+\hline
+\texttt{allam-2-7b} & 0.0 & 6.1 & 88.2 \\
+\texttt{qwen/qwen3-32b} & 33.3 & 23.2 & 65.6 \\
+\texttt{llama3-70b-8192} & 16.0 & 23.0 & 95.5 \\
+\texttt{gemma2-9b-it} & 25.2 & 31.1 & 123.3 \\
+\texttt{llama-4-scout-17b-16e-instruct} & 20.5 & 27.0 & 139.1 \\
+\texttt{llama-4-maverick-17b-128e-instruct} & 37.5 & 27.4 & 137.5 \\
+\texttt{llama-3.1-8b-instant} & 9.1 & 10.6 & 167.5 \\
+\texttt{llama3-8b-8192} & 23.5 & 17.1 & 158.8 \\
+\texttt{moonshotai/kimi-k2-instruct} & 33.5 & 19.9 & 181.3 \\
+\texttt{deepseek-r1-distill-llama-70b} & 45.0 & 36.9 & 184.7 \\
+\texttt{llama-3.3-70b-versatile} & 19.8 & 33.0 & 243.5 \\
+\hline\hline
+\end{tabular}
+%%END tab:etm_lang:plain
+
+%%BEGIN tab:etl_diff:plain
+\begin{tabular}{lrrr}
+\hline\hline
+\textbf{Language} & \textbf{Easy} & \textbf{Medium} & \textbf{Hard} \\
+\hline
+C++ & 2.0 & 37.3 & 102.1 \\
+Java & 3.1 & 35.5 & 70.8 \\
+Python3 & 21.4 & 173.5 & 631.0 \\
+\hline\hline
+\end{tabular}
+%%END tab:etl_diff:plain
+
+%%BEGIN tab:etd_stats:plain
+\begin{tabular}{lrrrr}
+\hline\hline
+\textbf{Difficulty} & \textbf{Mean} & \textbf{Median} & \textbf{Std.} & \textbf{Max} \\
+\hline
+Easy & 9.0 & 0.0 & 159.4 & 7{,}451 \\
+Medium & 83.7 & 9.0 & 338.4 & 6{,}696 \\
+Hard & 273.0 & 51.0 & 868.9 & 9{,}662 \\
+\hline\hline
+\end{tabular}
+%%END tab:etd_stats:plain
+
+%%BEGIN tab:mum_diff:plain
+\begin{tabular}{lrrr}
+\hline\hline
+\textbf{Model} & \textbf{Easy} & \textbf{Medium} & \textbf{Hard} \\
+\hline
+\texttt{allam-2-7b} & 28.3 & 28.8 & --- \\
+\texttt{llama3-8b-8192} & 24.7 & 33.1 & 30.4 \\
+\texttt{llama-3.1-8b-instant} & 24.8 & 31.8 & 43.2 \\
+\texttt{gemma2-9b-it} & 25.2 & 33.6 & 50.0 \\
+\texttt{llama3-70b-8192} & 24.9 & 35.9 & 44.9 \\
+\texttt{llama-3.3-70b-versatile} & 24.7 & 35.0 & 48.7 \\
+\texttt{llama-4-scout-17b-16e-instruct} & 24.4 & 37.2 & 42.4 \\
+\texttt{qwen/qwen3-32b} & 24.4 & 36.7 & 45.5 \\
+\texttt{llama-4-maverick-17b-128e-instruct} & 25.2 & 37.2 & 43.3 \\
+\texttt{moonshotai/kimi-k2-instruct} & 24.4 & 37.0 & 55.5 \\
+\texttt{deepseek-r1-distill-llama-70b} & 24.9 & 44.4 & 77.0 \\
+\hline\hline
+\end{tabular}
+%%END tab:mum_diff:plain
+
+%%BEGIN tab:mum_lang:plain
+\begin{tabular}{lrrr}
+\hline\hline
+\textbf{Model} & \textbf{C++} & \textbf{Java} & \textbf{Python3} \\
+\hline
+\texttt{allam-2-7b} & 8.1 & 43.2 & 18.1 \\
+\texttt{llama3-8b-8192} & 21.6 & 45.3 & 20.0 \\
+\texttt{llama-3.1-8b-instant} & 21.1 & 45.5 & 20.4 \\
+\texttt{gemma2-9b-it} & 22.6 & 45.2 & 20.7 \\
+\texttt{llama3-70b-8192} & 27.0 & 47.2 & 20.7 \\
+\texttt{llama-3.3-70b-versatile} & 24.5 & 47.6 & 23.9 \\
+\texttt{llama-4-scout-17b-16e-instruct} & 26.4 & 48.2 & 22.3 \\
+\texttt{qwen/qwen3-32b} & 29.3 & 47.7 & 21.0 \\
+\texttt{llama-4-maverick-17b-128e-instruct} & 29.0 & 49.4 & 23.0 \\
+\texttt{moonshotai/kimi-k2-instruct} & 36.9 & 47.6 & 23.8 \\
+\texttt{deepseek-r1-distill-llama-70b} & 37.5 & 52.7 & 25.6 \\
+\hline\hline
+\end{tabular}
+%%END tab:mum_lang:plain
+
+%%BEGIN tab:mul_diff:plain
+\begin{tabular}{lrrr}
+\hline\hline
+\textbf{Language} & \textbf{Easy} & \textbf{Medium} & \textbf{Hard} \\
+\hline
+C++ & 12.8 & 36.4 & 64.5 \\
+Java & 42.8 & 50.7 & 56.8 \\
+Python3 & 18.6 & 23.8 & 32.6 \\
+\hline\hline
+\end{tabular}
+%%END tab:mul_diff:plain
+
+%%BEGIN tab:mud_stats:plain
+\begin{tabular}{lrrrr}
+\hline\hline
+\textbf{Difficulty} & \textbf{Mean} & \textbf{Median} & \textbf{Std.} & \textbf{Max} \\
+\hline
+Easy & 24.8 & 19.1 & 14.1 & 64.7 \\
+Medium & 36.8 & 24.7 & 40.6 & 568.6 \\
+Hard & 51.0 & 33.9 & 63.6 & 434.3 \\
+\hline\hline
+\end{tabular}
+%%END tab:mud_stats:plain
+
+%%BEGIN tab:anova:plain
+\begin{tabular}{llrrrl}
+\hline
+\textbf{Factor} & \textbf{Metric} & \textbf{$F$} & \textbf{$p$} & \textbf{$\eta^{2}$} & \textbf{Effect} \\
+\hline
+Model & Acc. & 321.55 & $\approx0$ & 0.23 & large \\
+Language & Acc. & 1.75 & 0.174 & --- & n.s. \\
+Difficulty & Acc. & 863.00 & $\approx0$ & 0.14 & medium \\
+Model & Time & 1.26 & 0.250 & --- & n.s.$^{*}$ \\
+Language & Time & 70.87 & $4.1\times10^{-31}$ & 0.03 & small \\
+Model & Mem. & 3.93 & $2.4\times10^{-5}$ & 0.01 & small \\
+Language & Mem. & 270.08 & $1.3\times10^{-112}$ & 0.09 & medium \\
+\hline
+\multicolumn{6}{l}{\footnotesize $^{*}$Kruskal--Wallis $H=27.80$, $p=0.002$ (significant).}
+\end{tabular}
+%%END tab:anova:plain
+
+%%BEGIN tab:pearson_spearman:plain
+\begin{tabular}{lrr}
+\hline
+\textbf{Pair} & \textbf{Pearson $r$ ($p$)} & \textbf{Spearman $\rho$ ($p$)} \\
+\hline
+Acceptance $\times$ execution time & 0.39 (0.242) & 0.40 (0.223) \\
+Acceptance $\times$ memory & 0.80 (0.003) & 0.92 (0.000) \\
+Execution time $\times$ memory & 0.39 (0.240) & 0.40 (0.223) \\
+\hline
+\end{tabular}
+%%END tab:pearson_spearman:plain
+

@@ -2,3 +2,18 @@
 config.json
 .env
 leetcode_credentials.json
+artigo
+.claude
+.serena
+# local caches and logs (regenerable or private)
+data/.cache/
+__pycache__/
+*.pyc
+pipeline/3_generate/progresso.json
+pipeline/3_generate/status_respostas.json
+
+# working material of the revision (not part of the replication package)
+_archive/
+
+# runs made from scratch (STUDY_DATA_DIR / STUDY_RESULTS_DIR)
+runs/

@@ -1,0 +1,30 @@
+\begin{tabular}{lrr}
+\hline\hline
+\textbf{Fixed effect} & \textbf{OR [95\% CI]} & \textbf{$p$} \\
+\hline
+Language: Python3 & 1.27 [1.10, 1.48] & $0.001$ \\
+Language: Java & 1.19 [1.02, 1.38] & $0.024$ \\
+Difficulty: Medium & 0.11 [0.066, 0.20] & $<0.001$ \\
+Difficulty: Hard & 0.006 [0.003, 0.012] & $<0.001$ \\
+\texttt{moonshotai/kimi-k2-instruct} & 186.39 [130.24, 266.75] & $<0.001$ \\
+\texttt{qwen/qwen3-32b} & 30.28 [22.21, 41.29] & $<0.001$ \\
+\texttt{llama-4-maverick-17b-128e-instruct} & 28.95 [21.67, 38.66] & $<0.001$ \\
+\texttt{deepseek-r1-distill-llama-70b} & 14.97 [11.21, 20.00] & $<0.001$ \\
+\texttt{llama-3.3-70b-versatile} & 9.92 [7.59, 12.96] & $<0.001$ \\
+\texttt{llama-4-scout-17b-16e-instruct} & 9.85 [7.54, 12.87] & $<0.001$ \\
+\texttt{llama3-70b-8192} & 4.60 [3.55, 5.95] & $<0.001$ \\
+\texttt{llama-3.1-8b-instant} & 1.62 [1.25, 2.09] & $<0.001$ \\
+\texttt{gemma2-9b-it} & 0.92 [0.71, 1.20] & $0.553$ \\
+\texttt{allam-2-7b} & 0.011 [0.006, 0.019] & $<0.001$ \\
+\hline
+\multicolumn{3}{l}{\emph{Likelihood-ratio tests}} \\
+\textbf{Term} & \textbf{$\chi^2$ (df)} & \textbf{$p$} \\
+\hline
+Model & 4177.1 (10) & $<0.001$ \\
+Language & 10.9 (2) & $0.004$ \\
+Difficulty & 184.7 (2) & $<0.001$ \\
+Model $\times$ Language & 86.3 (20) & $<0.001$ \\
+Model $\times$ Difficulty & 58.2 (20) & $<0.001$ \\
+Language $\times$ Difficulty & 2.1 (4) & $0.712$ \\
+\hline\hline
+\end{tabular}

@@ -1,0 +1,11 @@
+{
+  "id": 20,
+  "modelo": "gemma2-9b-it",
+  "linguagem": "Java",
+  "status": "ok",
+  "categoria": "correct",
+  "motivo": "todas as seções presentes corretamente",
+  "resposta": "solution: \n```java\nclass Solution {\n    public boolean isValid(String s) {\n        Stack<Character> stack = new Stack<>();\n        Map<Character, Character> bracketPairs = new HashMap<>();\n        bracketPairs.put('(', ')');\n        bracketPairs.put('{', '}');\n        bracketPairs.put('[', ']');\n        for (char c : s.toCharArray()) {\n            if (bracketPairs.containsKey(c)) {\n                stack.push(c);\n            } else if (bracketPairs.containsValue(c)) {\n                if (stack.isEmpty() || bracketPairs.get(stack.pop()) != c) {\n                    return false;\n                }\n            } else {\n                return false;\n            }\n        }\n        return stack.isEmpty();\n    }\n}\n```\nefficiency: HIGH\ntime complexity: O(n)\nspace complexity: O(n)\nenergy implications: LOW\nexplanation: The solution uses a stack to keep track of opening brackets. It iterates through the string, pushing opening brackets onto the stack and popping them when a matching closing bracket is encountered. If a closing bracket doesn't have a corresponding opening bracket or the brackets are not in the correct order, the function returns false.  The stack ensures efficient tracking of bracket order, and the map provides quick lookup for matching pairs.\n",
+  "code": "class Solution {\n    public boolean isValid(String s) {\n        Stack<Character> stack = new Stack<>();\n        Map<Character, Character> bracketPairs = new HashMap<>();\n        bracketPairs.put('(', ')');\n        bracketPairs.put('{', '}');\n        bracketPairs.put('[', ']');\n        for (char c : s.toCharArray()) {\n            if (bracketPairs.containsKey(c)) {\n                stack.push(c);\n            } else if (bracketPairs.containsValue(c)) {\n                if (stack.isEmpty() || bracketPairs.get(stack.pop()) != c) {\n                    return false;\n                }\n            } else {\n                return false;\n            }\n        }\n        return stack.isEmpty();\n    }\n}",
+  "timestamp": "2025-08-05T22:46:19.926981"
+}

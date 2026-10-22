@@ -1,0 +1,11 @@
+{
+  "id": 991,
+  "modelo": "allam-2-7b",
+  "linguagem": "Python3",
+  "status": "ok",
+  "categoria": "plausible",
+  "motivo": "código extraído mas apenas 5/6 seções presentes",
+  "resposta": "solution:\ndef brokenCalc(self, startValue: int, target: int) -> int:\n    count = 0\n    while startValue != target:\n        if startValue * 2 <= target:\n            startValue //= 2\n        else:\n            startValue -= 1\n        count += 1\n    return count\n\nefficiency: HIGH\ntime complexity: O(log(target))\nspace complexity: O(1)\nenergy implications: LOW ",
+  "code": "class Solution:\n    def brokenCalc(self, startValue: int, target: int) -> int:\n        count = 0\n        while startValue != target:\n            if startValue * 2 <= target:\n                startValue //= 2\n            else:\n                startValue -= 1\n            count += 1\n        return count\n",
+  "timestamp": "2025-08-05T15:48:03.495557"
+}

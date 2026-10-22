@@ -1,0 +1,11 @@
+{
+  "id": 868,
+  "modelo": "allam-2-7b",
+  "linguagem": "Python3",
+  "status": "ok",
+  "categoria": "correct",
+  "motivo": "todas as seções presentes corretamente",
+  "resposta": "solution:\ndef binaryGap(self, n: int) -> int:\n    count = 0\n    for i in range(32):\n        if n & 1:\n            count += 1\n        n >>= 1\n    return count\n\nefficiency: HIGH\ntime complexity: O(log(n))\nspace complexity: O(1)\nenergy implications: LOW\n\nExplanation:\nWe iterate through the binary representation of n using a for loop with 32 iterations (since there are 32 bits in a 32-bit integer). For each iteration, we check if the least significant bit is 1 (indicating the presence of a 1 in the binary representation). If there is a 1, we increment the count. Then, we shift the integer right by one bit position to move to the next bit position. This solution has a time complexity of O(log(n)) due to the iterative approach, and a space complexity of O(1) since we only use a constant amount of space. ",
+  "code": "class Solution:\n    def binaryGap(self, n: int) -> int:\n        count = 0\n        for i in range(32):\n            if n & 1:\n                count += 1\n            n >>= 1\n        return count\n",
+  "timestamp": "2025-08-05T13:49:50.435798"
+}

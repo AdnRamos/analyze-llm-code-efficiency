@@ -1,0 +1,101 @@
+id_cego,categoria,justificativa
+V-001,A,bruto tem class Solution com wordCount(2) completo; submetido virou 'class Solution: solution:' (rótulo extraído no lugar do código)
+V-002,?,"resposta só com <think> truncado sem resposta final (modelo), mas o raciocínio contém class Solution.findKthNumber(2) completo e o extrator anexou prosa ao código (SyntaxError) — misto"
+V-003,A,bruto tem class RangeModule completa com os 4 métodos; submetido é só o texto 'The provided C++ code.'
+V-004,A,resposta final após </think> traz class Solution.possibleBipartition(2) correta; submetido pegou trecho do raciocínio sem cabeçalho e com prosa
+V-005,A,bruto tem class LUPrefix com __init__(1)/upload(1)/longest(0); pipeline envolveu a classe de design em class Solution (NameError LUPrefix)
+V-006,C,código submetido = class Solution.numberOfStableArrays(3) do modelo; IndexError na própria lógica do DP
+V-007,A,primeiro bloco do bruto tem class Solution.topKFrequent(2); submetido virou 'class Solution: solution:'
+V-008,B,bruto só traz função livre earliestAndLatest sem class Solution (C++); erro 'undeclared identifier Solution'
+V-009,B,bruto só traz função livre gcdOfStrings sem class Solution (C++)
+V-010,A,bruto tem class Solution.largestPalindrome(2) em bloco fechado; submetido ficou com ``` residual (SyntaxError linha 10)
+V-011,B,bruto é def findNthDigit(n) sem self (aridade errada); TypeError 1 positional but 2 given
+V-012,B,bruto 'solution: defangIPaddr(address):' não é def válido nem método; SyntaxError
+V-013,B,bloco java do modelo inclui efficiency/explanation antes de fechar a cerca (rótulos dentro do próprio bloco)
+V-014,B,bruto só traz função livre earliestAndLatest sem classe (C++)
+V-015,A,primeiro bloco do bruto tem class Solution.powerfulIntegers(3); extrator pegou o bloco 'solution:' com função livre
+V-016,C,"rótulo dentro do bloco foi removido; submetido é a class Solution do modelo e falha por max(int,size_t) (erro de compilação genuíno)"
+V-017,C,"código submetido é class Solution.maxTaskAssign(4) do modelo, sem texto residual; Wrong Answer por lógica"
+V-018,C,"bruto é método canConstruct(self,s,k) aderente; submetido envolvido corretamente; IndexError na lógica"
+V-019,?,"<think> sem fechamento e resposta armazenada cortada (35784 chars); raciocínio tem class Solution.canIWin(2), extrator anexou prosa — impossível ver se havia resposta final"
+V-020,?,"<think> truncado sem resposta final (modelo); raciocínio contém class Solution.smallestSubsequence(1) completo, extrator pegou def sem classe + prosa com '→' — misto"
+V-021,A,bruto tem class Solution.getMinSwaps(2) em bloco fechado; submetido ficou com ``` residual
+V-022,C,código submetido é a class Solution.findOrder(2) do modelo; erro de compilação 'result' não declarado em dfs
+V-023,A,"primeiro bloco do bruto tem class BookMyShow completa (construtor(2), gather(2), scatter(2)); submetido é '// above code here'"
+V-024,A,bruto tem class FoodRatings completa; submetido é só 'The provided C++ code.'
+V-025,C,código submetido é class Solution.longestPalindrome(1) do modelo; 'start' fora de escopo (erro de compilação genuíno)
+V-026,?,"<think> truncado sem resposta final; raciocínio tem class Solution.maxSubstrings(1) (rascunho depois rejeitado), extrator anexou prosa com '→' — misto"
+V-027,C,"código submetido é class Solution.reverseStr(2) do modelo; min(int,size_t) não compila"
+V-028,A,bruto tem class Solution.numWays(2) em bloco fechado; submetido ficou com ``` residual
+V-029,B,"bruto só tem função livre lengthAfterTransformation(s,t,nums) sem classe e com nome errado"
+V-030,B,bloco java do modelo contém efficiency/explanation antes da cerca de fechamento (texto dentro do bloco)
+V-031,A,bruto tem class Solution.robotWithString(1) em bloco fechado; submetido ficou com ``` residual
+V-032,?,bruto tem class MyLinkedList com aridades certas mas o próprio código do modelo degenera com recuo quebrado (IndentationError); pipeline ainda envolveu em class Solution — misto
+V-033,A,"bruto tem class Solution(m,n)/flip/reset completa; submetido é só 'The provided C++ code.'"
+V-034,C,código submetido é a class ExamRoom do modelo; membro 'n' não declarado (erro de compilação genuíno)
+V-035,A,bruto tem class Solution.countOperations(2) Python correto; foi julgado como C++ ('expected class name')
+V-036,A,bruto tem class MyStack completa; submetido é só 'The provided Java code implements the MyStack class.'
+V-037,A,bruto tem class MKAverage completa; submetido é só a frase 'The above C++ code implements...'
+V-038,A,bruto tem class Solution.maxScoreSightseeingPair(1) Python; julgado como C++ ('expected class name')
+V-039,B,bloco java do modelo contém efficiency/explanation antes de fechar a cerca (texto dentro do bloco)
+V-040,C,código submetido é class Solution.canPartitionKSubsets(2) do modelo; parêntese faltando (erro de compilação genuíno)
+V-041,A,bruto tem class Solution.maximumBinaryString(1) em bloco fechado; submetido ficou com ``` residual
+V-042,A,primeiro bloco do bruto tem class Solution.maxTaskAssign(4); extrator pegou o bloco 'solution:' só com o corpo
+V-043,A,bruto tem class Solution.sortString(1) Python; julgado como C++ ('expected class name')
+V-044,A,primeiro bloco do bruto tem class Solution.canBeEqual(2); extrator pegou o bloco 'solution:' só com o corpo
+V-045,C,"código submetido é class Solution.maximumOr(2) do modelo; max(long long,int) não compila"
+V-046,B,bruto define Solution::removeZeroSumSublists fora de classe sem declarar class Solution (C++)
+V-047,A,bruto tem class Solution.hasAlternatingBits(1) em bloco fechado; submetido ficou com ``` residual
+V-048,A,bruto tem class FreqStack completa; submetido é só a frase 'The provided Java code implements the FreqStack class.'
+V-049,A,bruto tem class Solution.hardestWorker(2) em bloco fechado; submetido ficou com ``` residual
+V-050,A,bruto tem class Solution.maximumLengthSubstring(1) em bloco fechado; submetido ficou com ``` residual
+V-051,A,resposta final após </think> tem class Solution.beautifulIndices(4); submetido pegou def do raciocínio sem cabeçalho + prosa
+V-052,B,"bloco python do modelo não é fechado e contém o rótulo 'solution:' e texto dentro do próprio bloco, que quebram a execução"
+V-053,A,primeiro bloco do bruto tem class Solution.countBinarySubstrings(1); extrator pegou o bloco 'solution:' com função livre
+V-054,?,"resposta do modelo foi truncada no meio da classe final ('int e'), mas o raciocínio tem class ExamRoom completa; pipeline ainda deixou ```java — misto"
+V-055,A,bruto tem class Solution.largestMerge(2) Python; julgado como C++ ('expected class name')
+V-056,A,resposta final após </think> tem class Solution.kthCharacter(2); submetido pegou def do raciocínio sem cabeçalho + prosa
+V-057,A,bruto tem class Solution.canChange(2) em bloco fechado; submetido ficou com ``` residual
+V-058,C,código submetido é class Solution.countPairs(3) do modelo; 'XOR' não é operador Java (erro de compilação genuíno)
+V-059,A,bruto tem class Solution.canIWin(2) completa; submetido é só 'The provided Java code.'
+V-060,A,bruto tem class AllOne completa; submetido é só a frase 'The provided C++ code implements the AllOne class.'
+V-061,C,resposta final do modelo é class Solution.canBeTypedWords(2) sem ';' após a classe; erro de compilação do próprio código
+V-062,B,bruto só traz função livre lexicalOrder sem class Solution (C++)
+V-063,A,"resposta final após </think> tem class Solution.isSubsequence(2); submetido pegou def do raciocínio + prosa ('Yes, that should work.')"
+V-064,B,"bruto é def canConvertString(s,t,k) sem self (aridade errada); TypeError 3 positional but 4 given"
+V-065,A,bruto tem class CombinationIterator completa; submetido é só 'The provided C++ code.'
+V-066,C,código submetido é class Solution encode(1)/decode(1) do modelo; urlMap local fora de escopo em decode
+V-067,B,resposta do modelo termina truncada em 'return hex +'; nenhum programa completo no bruto (``` residual não muda o desfecho)
+V-068,B,bruto define Solution::memLeak fora de classe sem declarar class Solution (C++)
+V-069,C,código submetido é class Solution(w)/pickIndex do modelo; atribui chaves a int e usa w inexistente (erro de compilação genuíno)
+V-070,?,"<think> sem fechamento e resposta armazenada cortada (33793 chars); raciocínio tem class Solution.friendRequests(3), extrator anexou prosa — impossível ver se havia resposta final"
+V-071,?,bruto tem class TweetCounts com aridades certas mas com colchetes não fechados (SyntaxError próprio); pipeline envolveu em Solution e manteve ```python — misto
+V-072,B,"bruto é def maximumOr(nums,k) sem self (aridade errada); TypeError 2 positional but 3 given"
+V-073,B,bruto só traz função livre constructRectangle sem class Solution (C++)
+V-074,B,bloco cpp do modelo contém efficiency/explanation antes de fechar a cerca (texto dentro do bloco)
+V-075,B,"bruto é só expressão solta (arr.sort()...), sem método findBestValue"
+V-076,B,"bruto é só expressão solta, sem método validPalindrome"
+V-077,?,"resposta truncada após </think> só com texto de abordagem, sem código final; raciocínio tem class Solution.addMinimum(1), extrator pegou def + prosa com '→' — misto"
+V-078,A,bruto tem class Solution.validArrangement(1) em bloco fechado; submetido ficou com ``` residual
+V-079,A,bruto tem class CountIntervals completa; submetido é só 'The provided C++ code.'
+V-080,A,primeiro bloco do bruto tem class MyLinkedList completa; extrator pegou o bloco 'solution:' só com comentários e envolveu em Solution
+V-081,B,bruto só traz método solto String lastSubstring sem class Solution (Java)
+V-082,A,bruto tem class Solution.topKFrequent(2) completa; submetido é só a frase 'The provided C++ code in the class Solution.'
+V-083,B,resposta final (e raciocínio) só trazem funções livres powerfulIntegers/generate_powers sem class Solution (C++)
+V-084,C,código submetido é class AllOne do modelo; campos 'count' e '.last()' inexistentes (erro de compilação genuíno)
+V-085,A,bruto tem class Solution.makeTheIntegerZero(2) em dois blocos; submetido virou 'class Solution: solution:'
+V-086,B,class KthLargest do modelo não tem add(1) (tem findKthLargest) e chaves desbalanceadas — não aderente
+V-087,C,código submetido é class SummaryRanges do modelo; push_back de pair em vector<vector<int>> (erro de compilação genuíno)
+V-088,C,código submetido é class Solution.maximumCount(2) do modelo; parêntese faltando (erro de compilação genuíno)
+V-089,C,código submetido é class MyStack do modelo (construtor padrão implícito); chama is_empty() inexistente
+V-090,C,código submetido é class MyCalendarThree do modelo; parêntese faltando e indexação inválida (erro de compilação genuíno)
+V-091,B,bloco java do modelo contém efficiency/explanation antes de fechar a cerca (texto dentro do bloco)
+V-092,?,"<think> truncado sem resposta final; raciocínio tem class Solution.minimumChanges(2) (rascunho que chama compute_cost não definido), extrator anexou prosa — misto"
+V-093,B,bruto só traz função livre baseNeg2 sem class Solution (C++)
+V-094,A,bruto tem class Solution.findAllPeople(3) em bloco fechado; submetido ficou com ``` e o texto 'solution:' residuais
+V-095,A,bruto tem class Solution.countBinarySubstrings(1) em bloco fechado; submetido ficou com ``` residual
+V-096,A,bruto tem class MKAverage completa; submetido é só 'The above Java code.'
+V-097,C,código submetido é class Solution.largeGroupPositions(1) do modelo; narrowing size_t->int em initializer list
+V-098,A,bruto tem class Solution.lengthOfLongestSubstring(1) em bloco fechado; submetido ficou com ``` residual
+V-099,C,código submetido é class Solution.removeInvalidParentheses(1) do modelo; set de listas (TypeError unhashable) na lógica
+V-100,A,primeiro bloco do bruto tem class Solution.smallestNumber(1); submetido virou 'class Solution: solution:'

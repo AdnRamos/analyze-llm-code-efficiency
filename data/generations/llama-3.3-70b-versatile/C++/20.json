@@ -1,0 +1,11 @@
+{
+  "id": 20,
+  "modelo": "llama-3.3-70b-versatile",
+  "linguagem": "C++",
+  "status": "ok",
+  "categoria": "correct",
+  "motivo": "todas as seções presentes corretamente",
+  "resposta": "solution: \n```cpp\nclass Solution {\npublic:\n    bool isValid(string s) {\n        stack<char> st;\n        for (char c : s) {\n            if (c == '(' || c == '{' || c == '[') {\n                st.push(c);\n            } else {\n                if (st.empty()) return false;\n                char top = st.top();\n                st.pop();\n                if ((c == ')' && top != '(') || (c == '}' && top != '{') || (c == ']' && top != '[')) {\n                    return false;\n                }\n            }\n        }\n        return st.empty();\n    }\n};\n```\nefficiency: HIGH\ntime complexity: O(n)\nspace complexity: O(n)\nenergy implications: LOW\nexplanation: Utilizes a stack to track opening brackets, ensuring correct order and matching of closing brackets.",
+  "code": "class Solution {\npublic:\n    bool isValid(string s) {\n        stack<char> st;\n        for (char c : s) {\n            if (c == '(' || c == '{' || c == '[') {\n                st.push(c);\n            } else {\n                if (st.empty()) return false;\n                char top = st.top();\n                st.pop();\n                if ((c == ')' && top != '(') || (c == '}' && top != '{') || (c == ']' && top != '[')) {\n                    return false;\n                }\n            }\n        }\n        return st.empty();\n    }\n};",
+  "timestamp": "2025-08-05T22:47:57.848029"
+}

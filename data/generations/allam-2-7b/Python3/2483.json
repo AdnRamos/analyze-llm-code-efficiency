@@ -1,0 +1,11 @@
+{
+  "id": 2483,
+  "modelo": "allam-2-7b",
+  "linguagem": "Python3",
+  "status": "ok",
+  "categoria": "plausible",
+  "motivo": "código extraído mas apenas 5/6 seções presentes",
+  "resposta": "solution:\ndef bestClosingTime(self, customers):\n    n = len(customers)\n    penalty = 0\n    for i in range(n):\n        if customers[i] == 'Y':\n            penalty += 1\n        else:\n            penalty -= 1\n    return penalty\n\nefficiency: HIGH\ntime complexity: O(n)\nspace complexity: O(1)\nenergy implications: LOW ",
+  "code": "class Solution:\n    def bestClosingTime(self, customers):\n        n = len(customers)\n        penalty = 0\n        for i in range(n):\n            if customers[i] == 'Y':\n                penalty += 1\n            else:\n                penalty -= 1\n        return penalty\n",
+  "timestamp": "2025-08-06T01:02:18.547824"
+}

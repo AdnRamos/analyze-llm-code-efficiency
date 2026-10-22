@@ -1,0 +1,11 @@
+{
+  "id": 715,
+  "modelo": "allam-2-7b",
+  "linguagem": "Python3",
+  "status": "ok",
+  "categoria": "plausible",
+  "motivo": "código extraído mas apenas 5/6 seções presentes",
+  "resposta": "solution:\n\n\n  class RangeModule:\n    \n  def __init__(self):\n        \n  self.ranges = []\n\n    \n  def addRange(self, left: int, right: int):\n        \n  self.ranges.append((left, right))\n\n    \n  def queryRange(self, left: int, right: int):\n        \n  for range_tuple in self.ranges:\n            \n  if left >= range_tuple[0] and right <= range_tuple[1]:\n               \n  return True\n        \n  return False\n\n    \n  def removeRange(self, left: int, right: int):\n        \n  for index, range_tuple in enumerate(self.ranges):\n            \n  if left >= range_tuple[0] and right <= range_tuple[1]:\n                \n  del self.ranges[index]\n\n\n  efficiency: HIGH\n\n  time complexity: O(n)\n\n  space complexity: O(n)\n\n  energy implications: LOW ",
+  "code": "class RangeModule:\n\ndef __init__(self):\n\nself.ranges = []\n\n\ndef addRange(self, left: int, right: int):\n\nself.ranges.append((left, right))\n\n\ndef queryRange(self, left: int, right: int):\n\nfor range_tuple in self.ranges:\n\nif left >= range_tuple[0] and right <= range_tuple[1]:\n\nreturn True\n\nreturn False\n\n\ndef removeRange(self, left: int, right: int):\n\nfor index, range_tuple in enumerate(self.ranges):\n\nif left >= range_tuple[0] and right <= range_tuple[1]:\n\ndel self.ranges[index]",
+  "timestamp": "2025-08-05T14:03:04.364450"
+}

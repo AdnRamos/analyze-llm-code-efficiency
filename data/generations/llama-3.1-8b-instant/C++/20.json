@@ -1,0 +1,11 @@
+{
+  "id": 20,
+  "modelo": "llama-3.1-8b-instant",
+  "linguagem": "C++",
+  "status": "ok",
+  "categoria": "correct",
+  "motivo": "todas as seções presentes corretamente",
+  "resposta": "solution: \n```cpp\nclass Solution {\npublic:\n    bool isValid(string s) {\n        stack<char> st;\n        unordered_map<char, char> mp = {{')', '('}, {'}', '{'}, {']', '['}};\n        for (char c : s) {\n            if (mp.find(c) != mp.end()) {\n                if (st.empty() || st.top() != mp[c]) return false;\n                st.pop();\n            } else {\n                st.push(c);\n            }\n        }\n        return st.empty();\n    }\n};\n```\n\nefficiency: HIGH\ntime complexity: O(n)\nspace complexity: O(n)\nenergy implications: LOW\nexplanation: This solution uses a stack to keep track of the opening brackets and a hash map to map closing brackets to their corresponding opening brackets. It iterates through the string, pushing opening brackets onto the stack and popping them off when a matching closing bracket is encountered. If a closing bracket does not match the top of the stack or if there are unmatched opening brackets left at the end, the string is invalid. This approach has a high efficiency due to its constant time complexity for stack operations and hash map lookups.",
+  "code": "class Solution {\npublic:\n    bool isValid(string s) {\n        stack<char> st;\n        unordered_map<char, char> mp = {{')', '('}, {'}', '{'}, {']', '['}};\n        for (char c : s) {\n            if (mp.find(c) != mp.end()) {\n                if (st.empty() || st.top() != mp[c]) return false;\n                st.pop();\n            } else {\n                st.push(c);\n            }\n        }\n        return st.empty();\n    }\n};",
+  "timestamp": "2025-08-05T16:20:02.174385"
+}

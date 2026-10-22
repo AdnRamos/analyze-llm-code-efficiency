@@ -1,0 +1,4 @@
+n=10666 questoes=336 aceitas=5495
+sd_questao=2.0218 icc=0.5541
+pdHess_m0=TRUE convergence=0
+glmmTMB=1.1.8 R=R version 4.3.3 (2024-02-29)
