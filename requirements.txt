@@ -10,4 +10,5 @@ streamlit==1.49.0
 plotly>=5.24
 statsmodels>=0.14
 openpyxl>=3.1
-openai>=1.0          # optional: provider "openai_compatible" in step 3
+# optional: provider "openai_compatible" in pipeline step 3
+openai>=1.0
